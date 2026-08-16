@@ -1,1 +1,708 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPVIP.COM - Gaming Gear Chính Hãng</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 15px 0;
+            border-bottom: 2px solid #ff0000;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            color: #ff0000;
+            text-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+            cursor: pointer;
+        }
+        .logo h1 span { color: #fff; }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        nav ul li a.admin-link {
+            background: #ff0000;
+            color: #fff;
+            padding: 8px 20px;
+        }
+
+        nav ul li a.btn-login {
+            border: 1px solid #ff0000;
+        }
+
+        nav ul li a.btn-login:hover {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0505 50%, #0a0a0a 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            border-bottom: 1px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255,0,0,0.05) 0%, transparent 70%);
+            animation: rotateGlow 20s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .hero-content h2 .highlight {
+            color: #ff0000;
+            text-shadow: 0 0 50px rgba(255, 0, 0, 0.5);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 14px 40px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: #ff0000;
+            color: #fff;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(255, 0, 0, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #ff0000;
+        }
+
+        .btn-secondary:hover {
+            background: #ff0000;
+            transform: scale(1.05);
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            padding: 40px 20px;
+            background: #0f0f0f;
+            border-bottom: 1px solid #222;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            color: #ff0000;
+        }
+
+        .stat-item p {
+            color: #888;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* ===== PRODUCTS ===== */
+        .products-section {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .products-section .section-title {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .products-section .section-title span {
+            color: #ff0000;
+        }
+
+        .products-section .sub-title {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #141414;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.4s;
+            border: 1px solid #222;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff0000);
+            transition: 0.5s;
+        }
+
+        .product-card:hover::before {
+            left: 0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff0000;
+            box-shadow: 0 10px 40px rgba(255, 0, 0, 0.15);
+        }
+
+        .product-card .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff0000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            background: #222;
+        }
+
+        .product-card .product-name {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .product-card .product-rating {
+            color: #ffc107;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .product-card .product-rating span {
+            color: #666;
+            margin-left: 5px;
+        }
+
+        .product-card .product-price {
+            font-size: 22px;
+            color: #ff0000;
+            font-weight: 900;
+            margin-bottom: 15px;
+        }
+
+        .btn-buy {
+            display: inline-block;
+            background: #ff0000;
+            color: #fff;
+            padding: 10px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-buy:hover {
+            background: #cc0000;
+            transform: scale(1.05);
+        }
+
+        /* ===== CATEGORIES ===== */
+        .categories-section {
+            max-width: 1200px;
+            margin: 30px auto 50px;
+            padding: 0 20px;
+        }
+
+        .categories-section h2 {
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .category-item {
+            background: #141414;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            border: 1px solid #222;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: #ccc;
+        }
+
+        .category-item:hover {
+            border-color: #ff0000;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .category-item i {
+            font-size: 28px;
+            color: #ff0000;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .category-item span {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0f0f0f;
+            padding: 40px 20px 20px;
+            border-top: 1px solid #222;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            color: #ff0000;
+            margin-bottom: 15px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: #ff0000;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid #1a1a1a;
+            color: #555;
+            font-size: 13px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero-content h2 {
+                font-size: 28px;
+            }
+            .stats {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+            .stat-item h3 {
+                font-size: 24px;
+            }
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h2 {
+                font-size: 22px;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn-primary, .btn-secondary {
+                width: 80%;
+                text-align: center;
+            }
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+            .product-card {
+                padding: 12px;
+            }
+            .product-card img {
+                height: 120px;
+            }
+            .product-card .product-price {
+                font-size: 17px;
+            }
+            .btn-buy {
+                padding: 8px 20px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>SHOP<span>VIP</span>.COM</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Trang Chủ</a></li>
+                    <li><a href="#products">Sản Phẩm</a></li>
+                    <li><a href="#categories">Danh Mục</a></li>
+                    <li><a href="deposit.html">Nạp Tiền</a></li>
+                    <li><a href="login.html" class="btn-login">Đăng Nhập</a></li>
+                    <li><a href="register.html">Đăng Ký</a></li>
+                    <li><a href="admin/index.html" class="admin-link"><i class="fas fa-crown"></i> Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>GEAR UP <span class="highlight">DOMINATE</span> WIN BIG</h2>
+            <p>Cửa hàng gaming gear cao cấp hàng đầu Việt Nam.<br>Chuột, bàn phím, tai nghe, màn hình — tất cả dành cho chiến thắng của bạn.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn-primary"><i class="fas fa-bolt"></i> MUA NGAY</a>
+                <a href="register.html" class="btn-secondary"><i class="fas fa-user-plus"></i> TẠO TÀI KHOẢN</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats">
+        <div class="stat-item">
+            <h3>12K+</h3>
+            <p>KHÁCH HÀNG</p>
+        </div>
+        <div class="stat-item">
+            <h3>500+</h3>
+            <p>SẢN PHẨM</p>
+        </div>
+        <div class="stat-item">
+            <h3>98%</h3>
+            <p>HÀI LÒNG</p>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIES ===== -->
+    <section class="categories-section" id="categories">
+        <h2><span style="color:#ff0000;">//</span> DANH MỤC SẢN PHẨM</h2>
+        <div class="categories-grid">
+            <a href="#" class="category-item">
+                <i class="fas fa-gamepad"></i>
+                <span>Mod Game</span>
+            </a>
+            <a href="#" class="category-item">
+                <i class="fas fa-file-archive"></i>
+                <span>File Tool</span>
+            </a>
+            <a href="#" class="category-item">
+                <i class="fas fa-mouse"></i>
+                <span>Proxy</span>
+            </a>
+            <a href="#" class="category-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Menu IOS</span>
+            </a>
+            <a href="#" class="category-item">
+                <i class="fas fa-android"></i>
+                <span>Menu Android</span>
+            </a>
+            <a href="#" class="category-item">
+                <i class="fas fa-cloud"></i>
+                <span>DV IOS</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section class="products-section" id="products">
+        <h2 class="section-title">🔥 SẢN PHẨM <span>NỔI BẬT</span></h2>
+        <p class="sub-title">Các file mod, tool, menu được tải nhiều nhất</p>
+
+        <div class="products-grid">
+
+            <!-- Sản phẩm 1 -->
+            <div class="product-card">
+                <span class="badge">HOT</span>
+                <img src="https://via.placeholder.com/300x180/1a1a1a/ff0000?text=FILE+50K" alt="File 50k">
+                <div class="product-name">File 50k</div>
+                <div class="product-rating">★★★★★ <span>(0)</span></div>
+                <div class="product-price">50.000đ</div>
+                <a href="checkout.html" class="btn-buy">MUA NGAY</a>
+            </div>
+
+            <!-- Sản phẩm 2 -->
+            <div class="product-card">
+                <span class="badge">VIP</span>
+                <img src="https://via.placeholder.com/300x180/1a1a1a/ff0000?text=FILE+100K" alt="File 100k">
+                <div class="product-name">File 100k</div>
+                <div class="product-rating">★★★★★ <span>(0)</span></div>
+                <div class="product-price">100.000đ</div>
+                <a href="checkout.html" class="btn-buy">MUA NGAY</a>
+            </div>
+
+            <!-- Sản phẩm 3 -->
+            <div class="product-card">
+                <span class="badge">PREMIUM</span>
+                <img src="https://via.placeholder.com/300x180/1a1a1a/ff0000?text=FILE+200K" alt="File 200k">
+                <div class="product-name">File 200k</div>
+                <div class="product-rating">★★★★★ <span>(0)</span></div>
+                <div class="product-price">200.000đ</div>
+                <a href="checkout.html" class="btn-buy">MUA NGAY</a>
+            </div>
+
+            <!-- Sản phẩm 4 -->
+            <div class="product-card">
+                <span class="badge">NEW</span>
+                <img src="https://via.placeholder.com/300x180/1a1a1a/ff0000?text=VOID+RAM" alt="VOID RAM">
+                <div class="product-name">VOID RAM v4.2.0</div>
+                <div class="product-rating">★★★★★ <span>(0)</span></div>
+                <div class="product-price">150.000đ</div>
+                <a href="checkout.html" class="btn-buy">MUA NGAY</a>
+            </div>
+
+            <!-- Sản phẩm 5 -->
+            <div class="product-card">
+                <span class="badge">HOT</span>
+                <img src="https://via.placeholder.com/300x180/1a1a1a/ff0000?text=NEBULA" alt="Nebula">
+                <div class="product-name">Nebula v1.0.6 Beta</div>
+                <div class="product-rating">★★★★★ <span>(0)</span></div>
+                <div class="product-price">120.000đ</div>
+                <a href="checkout.html" class="btn-buy">MUA NGAY</a>
+            </div>
+
+            <!-- Sản phẩm 6 -->
+            <div class="product-card">
+                <span class="badge">TOOL</span>
+                <img src="https://via.placeholder.com/300x180/1a1a1a/ff0000?text=AX+MANAGER" alt="AxManager">
+                <div class="product-name">AxManager v1.4.8</div>
+                <div class="product-rating">★★★★★ <span>(0)</span></div>
+                <div class="product-price">80.000đ</div>
+                <a href="checkout.html" class="btn-buy">MUA NGAY</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>SHOPVIP</h4>
+                <p>Cửa hàng gaming gear cao cấp uy tín hàng đầu Việt Nam. Sản phẩm chính hãng, bảo hành đầy đủ, giao hàng toàn quốc.</p>
+            </div>
+            <div class="footer-col">
+                <h4>SẢN PHẨM</h4>
+                <a href="#">Chuột Gaming</a>
+                <a href="#">Bàn Phím Cơ</a>
+                <a href="#">Tai Nghe</a>
+                <a href="#">Màn Hình</a>
+                <a href="#">Ghế Gaming</a>
+            </div>
+            <div class="footer-col">
+                <h4>HỖ TRỢ</h4>
+                <a href="#">Admin Chính <span style="color:#ff0000;">24/7</span></a>
+                <a href="#">Admin Phụ</a>
+                <a href="#">Chính sách bảo hành</a>
+                <a href="#">Hướng dẫn mua hàng</a>
+            </div>
+            <div class="footer-col">
+                <h4>TÀI KHOẢN</h4>
+                <a href="login.html">Đăng nhập</a>
+                <a href="register.html">Đăng ký</a>
+                <a href="#">Quên mật khẩu</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 SHOPVIP.COM - All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Hiệu ứng smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Hiệu ứng hover cho stats
+        document.querySelectorAll('.stat-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.querySelector('h3').style.color = '#fff';
+                this.querySelector('h3').style.textShadow = '0 0 30px rgba(255,0,0,0.8)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.querySelector('h3').style.color = '#ff0000';
+                this.querySelector('h3').style.textShadow = 'none';
+            });
+        });
+
+        console.log('🔥 SHOPVIP.COM đã sẵn sàng!');
+    </script>
+
+</body>
+      </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOPVIP.COM - Gaming Gear</title>
+    <title>SHOPVIP.COM</title>
     <style>
         * {
             margin: 0;
@@ -18,14 +18,14 @@
             min-height: 100vh;
         }
 
-        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: #0a0a1a; }
         ::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 10px; }
 
         /* HEADER */
         .header {
-            background: #0f0f2a;
-            padding: 15px 30px;
+            background: linear-gradient(135deg, #0f0f2a, #1a0a3e);
+            padding: 12px 25px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -34,51 +34,50 @@
             top: 0;
             z-index: 100;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .logo {
             font-size: 24px;
             font-weight: 900;
-            color: #fff;
-        }
-        .logo span {
-            color: #8b5cf6;
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .logo small {
-            font-size: 12px;
-            color: #6b7280;
-            font-weight: 400;
+            font-size: 11px;
+            -webkit-text-fill-color: #6b7280;
+            background: none;
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
         .user-info {
             color: #9ca3af;
             font-size: 13px;
-            background: rgba(124, 58, 237, 0.15);
-            padding: 6px 16px;
+            background: rgba(124, 58, 237, 0.12);
+            padding: 5px 14px;
             border-radius: 6px;
-            border: 1px solid rgba(124, 58, 237, 0.3);
+            border: 1px solid rgba(124, 58, 237, 0.2);
         }
 
         .balance {
             color: #22c55e;
             font-weight: 700;
             background: rgba(34, 197, 94, 0.1);
-            padding: 6px 16px;
+            padding: 5px 14px;
             border-radius: 6px;
-            border: 1px solid rgba(34, 197, 94, 0.3);
+            border: 1px solid rgba(34, 197, 94, 0.2);
             font-size: 13px;
         }
 
         .btn {
-            padding: 8px 24px;
+            padding: 7px 20px;
             border: none;
             border-radius: 6px;
             cursor: pointer;
@@ -114,27 +113,26 @@
             color: #fff;
         }
         .btn-sm {
-            padding: 4px 12px;
-            font-size: 12px;
+            padding: 3px 12px;
+            font-size: 11px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px 40px;
+            padding: 0 20px 30px;
         }
 
         /* HERO */
         .hero {
             text-align: center;
-            padding: 40px 20px 30px;
+            padding: 25px 20px 20px;
             border-bottom: 1px solid #1a1a3e;
-            margin-bottom: 20px;
         }
         .hero h1 {
-            font-size: 32px;
+            font-size: 30px;
             color: #fff;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         }
         .hero h1 span {
             background: linear-gradient(90deg, #8b5cf6, #3b82f6);
@@ -143,58 +141,53 @@
         }
         .hero p {
             color: #9ca3af;
-            font-size: 15px;
+            font-size: 14px;
             max-width: 600px;
-            margin: 0 auto 20px;
-        }
-        .hero .btn-group {
-            display: flex;
-            gap: 12px;
-            justify-content: center;
-            flex-wrap: wrap;
+            margin: 0 auto 12px;
+            line-height: 1.5;
         }
 
         .stats {
             display: flex;
             justify-content: center;
-            gap: 50px;
-            margin-top: 25px;
+            gap: 35px;
+            margin-top: 15px;
             flex-wrap: wrap;
         }
         .stats .num {
-            font-size: 26px;
+            font-size: 22px;
             font-weight: 700;
             color: #8b5cf6;
         }
         .stats .label {
-            font-size: 13px;
+            font-size: 12px;
             color: #6b7280;
         }
 
         /* CATEGORY */
         .category-bar {
             display: flex;
-            gap: 8px;
+            gap: 5px;
             flex-wrap: wrap;
-            margin: 15px 0 20px;
-            padding-bottom: 15px;
+            margin: 12px 0 15px;
+            padding: 10px 0;
             border-bottom: 1px solid #1a1a3e;
         }
         .category-bar .cat-label {
             color: #6b7280;
-            font-size: 13px;
-            margin-right: 10px;
-            line-height: 34px;
+            font-size: 12px;
+            margin-right: 6px;
+            line-height: 30px;
         }
         .category-bar button {
-            padding: 6px 20px;
+            padding: 4px 16px;
             border: 1px solid #2d2d5e;
             border-radius: 6px;
             background: transparent;
             color: #9ca3af;
             cursor: pointer;
             transition: 0.3s;
-            font-size: 13px;
+            font-size: 12px;
         }
         .category-bar button:hover,
         .category-bar button.active {
@@ -203,220 +196,274 @@
             color: #fff;
         }
 
-        /* PRODUCT GRID */
         .section-title {
-            font-size: 20px;
+            font-size: 18px;
             color: #e5e7eb;
-            margin: 20px 0 15px;
+            margin: 15px 0 12px;
         }
 
+        /* PRODUCT GRID */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 14px;
         }
 
         .product-card {
             background: #12122a;
             border: 1px solid #2d2d5e;
             border-radius: 8px;
-            padding: 18px;
+            padding: 14px;
             transition: all 0.3s;
+            text-align: center;
+            position: relative;
         }
         .product-card:hover {
             border-color: #8b5cf6;
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.1);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.08);
         }
         .product-card .badge {
             display: inline-block;
-            background: #8b5cf6;
-            padding: 2px 12px;
+            background: linear-gradient(90deg, #8b5cf6, #6366f1);
+            padding: 2px 10px;
             border-radius: 4px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
+        }
+        .product-card .sale-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #ef4444;
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
         }
         .product-card .name {
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 700;
             color: #fff;
         }
         .product-card .cat {
             color: #6b7280;
-            font-size: 13px;
-            margin: 2px 0 6px;
+            font-size: 11px;
+            margin: 2px 0 4px;
+        }
+        .product-card .price-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin: 4px 0 6px;
         }
         .product-card .price {
-            font-size: 20px;
+            font-size: 17px;
             font-weight: 700;
             color: #8b5cf6;
         }
-        .product-card .desc {
-            color: #9ca3af;
+        .product-card .old-price {
             font-size: 13px;
-            line-height: 1.4;
-            margin: 6px 0 10px;
-        }
-        .product-card .stock {
-            font-size: 12px;
             color: #6b7280;
-            margin-bottom: 8px;
+            text-decoration: line-through;
+        }
+        .product-card .rating {
+            color: #f59e0b;
+            font-size: 12px;
+            margin-bottom: 4px;
         }
         .product-card .btn {
             width: 100%;
-            padding: 8px;
-            font-size: 13px;
+            padding: 6px;
+            font-size: 12px;
         }
         .product-card .admin-actions {
             display: flex;
-            gap: 6px;
-            margin-top: 8px;
-            flex-wrap: wrap;
+            gap: 4px;
+            margin-top: 5px;
         }
         .product-card .admin-actions .btn {
             flex: 1;
-            min-width: 50px;
-            padding: 4px 8px;
-            font-size: 11px;
+            padding: 2px 6px;
+            font-size: 10px;
         }
 
-        /* MY KEYS */
-        .my-keys {
-            background: #12122a;
-            border: 1px solid #2d2d5e;
-            border-radius: 8px;
-            padding: 18px;
-            margin-top: 20px;
-        }
-        .my-keys h3 {
-            color: #e5e7eb;
-            font-size: 17px;
-            margin-bottom: 12px;
-        }
-        .key-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 14px;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 6px;
-            margin: 4px 0;
-            border-left: 3px solid #22c55e;
-            flex-wrap: wrap;
-            gap: 6px;
-            font-size: 14px;
-        }
-        .key-item .key-code {
-            color: #8b5cf6;
-            font-weight: 700;
-            font-family: monospace;
-            letter-spacing: 0.5px;
-        }
-        .key-item .key-info {
-            color: #9ca3af;
-            font-size: 13px;
-        }
-
-        /* ADMIN PANEL */
+        /* ADMIN PANEL - giống ảnh 3 */
         .admin-panel {
             display: none;
             background: #12122a;
             border: 1px solid #2d2d5e;
-            border-radius: 8px;
+            border-radius: 10px;
             padding: 20px;
-            margin-top: 25px;
+            margin-top: 20px;
         }
         .admin-panel.active { display: block; }
-        .admin-panel h2 {
-            color: #8b5cf6;
-            font-size: 20px;
-            border-bottom: 1px solid #2d2d5e;
-            padding-bottom: 10px;
-            margin-bottom: 18px;
+
+        .admin-dashboard {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            .admin-dashboard { grid-template-columns: 1fr; }
         }
 
-        .admin-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
-        .admin-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid #2d2d5e;
+        .admin-sidebar {
+            background: rgba(0,0,0,0.2);
             border-radius: 8px;
-            padding: 16px;
+            padding: 12px;
+            border: 1px solid #2d2d5e;
         }
-        .admin-card h3 {
-            color: #c4b5d4;
-            font-size: 14px;
+        .admin-sidebar .brand {
+            font-size: 18px;
+            font-weight: 900;
+            color: #8b5cf6;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #2d2d5e;
             margin-bottom: 10px;
         }
-        .admin-card input,
-        .admin-card textarea,
-        .admin-card select {
+        .admin-sidebar .brand span { color: #fff; }
+        .admin-sidebar .menu-item {
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            color: #9ca3af;
+            font-size: 13px;
+            transition: 0.3s;
+            margin: 2px 0;
+        }
+        .admin-sidebar .menu-item:hover {
+            background: rgba(139, 92, 246, 0.1);
+            color: #fff;
+        }
+        .admin-sidebar .menu-item.active {
+            background: rgba(139, 92, 246, 0.15);
+            color: #8b5cf6;
+            border-left: 3px solid #8b5cf6;
+        }
+
+        .admin-content {
+            background: rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #2d2d5e;
+            min-height: 400px;
+        }
+        .admin-content h2 {
+            color: #e5e7eb;
+            font-size: 18px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #2d2d5e;
+            padding-bottom: 8px;
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+        .admin-table th {
+            text-align: left;
+            padding: 8px 10px;
+            color: #6b7280;
+            border-bottom: 1px solid #2d2d5e;
+            font-weight: 600;
+        }
+        .admin-table td {
+            padding: 6px 10px;
+            border-bottom: 1px solid #1a1a3e;
+            color: #c4b5d4;
+        }
+        .admin-table .status-badge {
+            padding: 2px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+        .status-badge.hot { background: #ef4444; color: #fff; }
+        .status-badge.new { background: #22c55e; color: #fff; }
+        .status-badge.sale { background: #f59e0b; color: #fff; }
+
+        .admin-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        @media (max-width: 600px) {
+            .admin-form { grid-template-columns: 1fr; }
+        }
+        .admin-form .full { grid-column: 1 / -1; }
+        .admin-form label {
+            color: #9ca3af;
+            font-size: 12px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .admin-form input, .admin-form textarea, .admin-form select {
             width: 100%;
             padding: 8px 12px;
-            margin: 4px 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0,0,0,0.3);
             border: 1px solid #2d2d5e;
             border-radius: 6px;
             color: #fff;
             font-size: 13px;
         }
-        .admin-card input:focus,
-        .admin-card textarea:focus {
+        .admin-form input:focus, .admin-form textarea:focus {
             outline: none;
             border-color: #8b5cf6;
         }
-        .admin-card .btn { width: 100%; margin-top: 4px; }
-        .admin-card .result {
-            margin-top: 6px;
-            color: #8b5cf6;
-            font-size: 13px;
+        .admin-form .btn { padding: 8px 20px; }
+
+        .voucher-list {
+            display: grid;
+            gap: 8px;
         }
+        .voucher-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 14px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 6px;
+            border-left: 3px solid #8b5cf6;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .voucher-item .code { color: #8b5cf6; font-weight: 700; }
+        .voucher-item .discount { color: #22c55e; font-weight: 700; }
 
         .transaction-list {
-            margin-top: 8px;
-            background: rgba(0, 0, 0, 0.2);
+            margin-top: 6px;
+            background: rgba(0,0,0,0.2);
             border-radius: 6px;
-            padding: 6px 12px;
+            padding: 4px 10px;
             max-height: 200px;
             overflow-y: auto;
         }
         .transaction-item {
             display: flex;
             justify-content: space-between;
-            padding: 6px 0;
+            padding: 4px 0;
             border-bottom: 1px solid #1a1a3e;
             color: #c4b5d4;
-            font-size: 13px;
+            font-size: 12px;
             flex-wrap: wrap;
             gap: 4px;
         }
         .transaction-item:last-child { border-bottom: none; }
         .transaction-item .code { color: #8b5cf6; font-weight: 600; }
         .transaction-item .status {
-            padding: 1px 12px;
+            padding: 1px 10px;
             border-radius: 4px;
-            font-size: 11px;
+            font-size: 10px;
         }
         .status.pending { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
         .status.completed { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
-        .status.cancelled { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
         .status.waiting { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
-        .status.sold { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
 
-        .admin-actions-small {
-            display: flex;
-            gap: 4px;
-        }
-        .admin-actions-small .btn {
-            padding: 1px 10px;
-            font-size: 11px;
-        }
-
-        /* MODAL */
+        /* MODAL - giống ảnh 1-2 */
         .modal {
             display: none;
             position: fixed;
@@ -424,113 +471,227 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(0,0,0,0.85);
             z-index: 999;
             justify-content: center;
             align-items: center;
+            backdrop-filter: blur(4px);
         }
         .modal.active { display: flex; }
         .modal-content {
             background: #12122a;
             border: 1px solid #2d2d5e;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 30px;
             width: 90%;
-            max-width: 380px;
+            max-width: 400px;
         }
-        .modal-content h2 {
-            color: #8b5cf6;
+        .modal-content .modal-logo {
+            font-size: 20px;
+            font-weight: 900;
             text-align: center;
-            font-size: 22px;
+            margin-bottom: 4px;
+            color: #fff;
         }
-        .modal-content .sub {
+        .modal-content .modal-logo span { color: #8b5cf6; }
+        .modal-content .modal-title {
+            font-size: 18px;
+            color: #e5e7eb;
+            text-align: center;
+            font-weight: 700;
+        }
+        .modal-content .modal-sub {
             text-align: center;
             color: #6b7280;
-            font-size: 14px;
-            margin: 4px 0 18px;
+            font-size: 12px;
+            margin: 4px 0 14px;
+            line-height: 1.4;
         }
-        .modal-content input {
+        .modal-content .tab-group {
+            display: flex;
+            gap: 0;
+            margin-bottom: 14px;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #2d2d5e;
+        }
+        .modal-content .tab-group .tab {
+            flex: 1;
+            padding: 7px;
+            text-align: center;
+            background: transparent;
+            color: #6b7280;
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+        .modal-content .tab-group .tab.active {
+            background: #8b5cf6;
+            color: #fff;
+        }
+        .modal-content .input-group {
+            margin: 5px 0;
+        }
+        .modal-content .input-group label {
+            display: block;
+            color: #9ca3af;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .modal-content .input-group input {
             width: 100%;
-            padding: 10px 14px;
-            margin: 4px 0;
-            background: rgba(0, 0, 0, 0.3);
+            padding: 9px 12px;
+            background: rgba(0,0,0,0.3);
             border: 1px solid #2d2d5e;
             border-radius: 6px;
             color: #fff;
-            font-size: 14px;
+            font-size: 13px;
         }
-        .modal-content input:focus {
+        .modal-content .input-group input:focus {
             outline: none;
             border-color: #8b5cf6;
         }
-        .modal-content .btn { width: 100%; padding: 10px; margin-top: 6px; }
+        .modal-content .btn { width: 100%; padding: 10px; margin-top: 8px; font-size: 14px; }
+        .modal-content .error {
+            color: #ef4444;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+        .modal-content .success {
+            color: #22c55e;
+            text-align: center;
+            font-size: 12px;
+            margin-top: 4px;
+        }
         .modal-content .switch {
             text-align: center;
             color: #6b7280;
-            font-size: 13px;
-            margin-top: 12px;
+            font-size: 12px;
+            margin-top: 10px;
         }
         .modal-content .switch a {
             color: #8b5cf6;
             cursor: pointer;
         }
-        .modal-content .error { color: #ef4444; text-align: center; font-size: 13px; margin-top: 8px; }
-        .modal-content .success { color: #22c55e; text-align: center; font-size: 13px; margin-top: 8px; }
+
+        /* MY KEYS */
+        .my-keys {
+            background: #12122a;
+            border: 1px solid #2d2d5e;
+            border-radius: 8px;
+            padding: 14px;
+            margin-top: 16px;
+        }
+        .my-keys h3 {
+            color: #e5e7eb;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+        .key-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 12px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 6px;
+            margin: 3px 0;
+            border-left: 3px solid #22c55e;
+            flex-wrap: wrap;
+            gap: 4px;
+            font-size: 12px;
+        }
+        .key-item .key-code {
+            color: #8b5cf6;
+            font-weight: 700;
+            font-family: monospace;
+        }
+
+        .qr-section {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .qr-section .qr-placeholder {
+            width: 180px;
+            height: 180px;
+            background: #fff;
+            margin: 10px auto;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 12px;
+        }
+
+        .footer {
+            background: #0f0f2a;
+            border-top: 1px solid #1a1a3e;
+            padding: 20px 25px;
+            margin-top: 25px;
+        }
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+        }
+        .footer-grid h4 {
+            color: #e5e7eb;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+        .footer-grid p, .footer-grid a {
+            color: #6b7280;
+            font-size: 12px;
+            line-height: 1.8;
+            text-decoration: none;
+            display: block;
+        }
+        .footer-grid a:hover { color: #8b5cf6; }
 
         .toggle-group {
             display: flex;
-            gap: 8px;
-            margin: 6px 0;
+            gap: 6px;
+            margin: 4px 0;
+            align-items: center;
         }
         .toggle-group label {
             color: #9ca3af;
-            font-size: 13px;
+            font-size: 12px;
             display: flex;
             align-items: center;
             gap: 4px;
             cursor: pointer;
         }
         .toggle-group input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             accent-color: #8b5cf6;
             cursor: pointer;
         }
 
         @media (max-width: 768px) {
-            .header { padding: 10px 16px; }
-            .logo { font-size: 20px; }
-            .hero h1 { font-size: 24px; }
-            .product-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
-            .admin-grid { grid-template-columns: 1fr; }
-            .stats { gap: 20px; }
+            .header { padding: 8px 14px; }
+            .logo { font-size: 18px; }
+            .hero h1 { font-size: 22px; }
+            .product-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+            .admin-dashboard { grid-template-columns: 1fr; }
+            .stats { gap: 16px; }
+            .stats .num { font-size: 18px; }
             .modal-content { padding: 20px; }
         }
         @media (max-width: 480px) {
-            .product-grid { grid-template-columns: 1fr; }
-            .header-right .user-info { font-size: 12px; padding: 4px 10px; }
+            .product-grid { grid-template-columns: 1fr 1fr; }
+            .header-right .user-info { font-size: 11px; padding: 3px 10px; }
             .category-bar .cat-label { display: none; }
-            .category-bar button { padding: 4px 12px; font-size: 12px; }
-        }
-
-        .flash-sale {
-            background: linear-gradient(90deg, #7c3aed, #4f46e5);
-            padding: 8px 16px;
-            border-radius: 6px;
-            text-align: center;
-            margin: 10px 0;
-            font-weight: 700;
-            font-size: 14px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-        .flash-sale .discount {
-            background: #ef4444;
-            padding: 2px 12px;
-            border-radius: 4px;
+            .category-bar button { padding: 3px 10px; font-size: 11px; }
         }
     </style>
 </head>
@@ -538,7 +699,7 @@
 
 <!-- HEADER -->
 <header class="header">
-    <div class="logo">SHOPVIP<span>.COM</span> <small>– Gaming Gear</small></div>
+    <div class="logo">SHOPVIP<small>.COM</small></div>
     <div class="header-right">
         <span class="user-info" id="userDisplay">👤 Khách</span>
         <span class="balance" id="balanceDisplay" style="display:none;">💰 0đ</span>
@@ -552,11 +713,7 @@
 <!-- HERO -->
 <section class="hero">
     <h1><span>GEAR UP</span> DOMINATE WIN BIG</h1>
-    <p>Cửa hàng gaming gear cao cấp hàng đầu Việt Nam. Chuột, bàn phím, tai nghe, màn hình — tất cả dành cho chiến thắng của bạn.</p>
-    <div class="btn-group">
-        <button class="btn btn-primary" onclick="openLogin()">MUA NGAY</button>
-        <button class="btn btn-outline" onclick="openRegister()">TẠO TÀI KHOẢN</button>
-    </div>
+    <p>Cửa hàng gaming gear cao cấp uy tín hàng đầu Việt Nam.</p>
     <div class="stats">
         <div><div class="num">12K+</div><div class="label">KHÁCH HÀNG</div></div>
         <div><div class="num">500+</div><div class="label">SẢN PHẨM</div></div>
@@ -566,26 +723,35 @@
 
 <div class="container">
 
-    <!-- FLASH SALE -->
-    <div class="flash-sale">
-        🔥 FLASH SALE – SHOPVIP EXCLUSIVE
-        <span class="discount">25%</span> GIẢM GIÁ
-        <span>⏰ 24:00</span>
-    </div>
-
     <!-- CATEGORY -->
     <div class="category-bar">
         <span class="cat-label">// DANH MỤC</span>
         <button class="active" onclick="filterProducts('all', this)">Tất Cả</button>
-        <button onclick="filterProducts('chuột', this)">Chuột</button>
-        <button onclick="filterProducts('bàn phím', this)">Bàn Phím</button>
-        <button onclick="filterProducts('tai nghe', this)">Tai Nghe</button>
-        <button onclick="filterProducts('màn hình', this)">Màn Hình</button>
+        <button onclick="filterProducts('fake lag', this)">fake lagg</button>
+        <button onclick="filterProducts('file', this)">file</button>
+        <button onclick="filterProducts('menu', this)">Menu</button>
+        <button onclick="filterProducts('key proxy adr', this)">Key proxy adr</button>
+        <button onclick="filterProducts('key proxy ios', this)">Key proxy ios</button>
+        <button onclick="filterProducts('menu adr', this)">Menu adr</button>
+        <button onclick="filterProducts('menu ios', this)">Menu ios</button>
+        <button onclick="filterProducts('đv ios', this)">Đv ios</button>
+    </div>
+
+    <!-- FLASH SALE -->
+    <div style="background:linear-gradient(90deg,#7c3aed,#4f46e5);padding:8px 16px;border-radius:6px;text-align:center;margin:8px 0 14px;font-weight:700;font-size:14px;">
+        🔥 FLASH SALE – SHOPVIP EXCLUSIVE
+        <span style="background:#ef4444;padding:2px 12px;border-radius:4px;margin:0 6px;">25%</span> GIẢM GIÁ
     </div>
 
     <!-- PRODUCTS -->
-    <h2 class="section-title">🔥 Sản phẩm nổi bật</h2>
-    <div class="product-grid" id="productGrid"></div>
+    <h2 class="section-title">🔥 Sản phẩm</h2>
+    <div class="product-grid" id="productGrid">
+        <div style="grid-column:1/-1;text-align:center;color:#4a4a7a;padding:30px;border:1px dashed #2d2d5e;border-radius:8px;">
+            <div style="font-size:32px;margin-bottom:6px;">🛒</div>
+            <div style="font-size:14px;color:#6b7280;">Chưa có sản phẩm</div>
+            <div style="font-size:12px;color:#4a4a7a;">Đăng nhập admin để thêm</div>
+        </div>
+    </div>
 
     <!-- MY KEYS -->
     <div class="my-keys" id="myKeysSection" style="display:none;">
@@ -593,145 +759,171 @@
         <div id="myKeysList"></div>
     </div>
 
-    <!-- ADMIN PANEL -->
+    <!-- ADMIN PANEL - giống ảnh 3 -->
     <div class="admin-panel" id="adminPanel">
-        <h2>⚙️ Quản trị viên</h2>
-        <div class="admin-grid">
-
-            <!-- Thêm sản phẩm -->
-            <div class="admin-card">
-                <h3>➕ Thêm sản phẩm</h3>
-                <input type="text" id="prodName" placeholder="Tên sản phẩm">
-                <input type="text" id="prodCategory" placeholder="Danh mục">
-                <input type="number" id="prodPrice" placeholder="Giá (VNĐ)">
-                <textarea id="prodDesc" rows="2" placeholder="Mô tả"></textarea>
-                <button class="btn btn-success" onclick="addProduct()">Thêm</button>
-                <div id="addResult" class="result"></div>
+        <div class="admin-dashboard">
+            <div class="admin-sidebar">
+                <div class="brand">SHOPVIP<span>.COM</span></div>
+                <div class="menu-item active" onclick="switchAdminTab('dashboard')">📊 Dashboard</div>
+                <div class="menu-item" onclick="switchAdminTab('deposits')">💰 Yêu Cầu Nạp Tiền</div>
+                <div class="menu-item" onclick="switchAdminTab('products')">📦 Sản Phẩm</div>
+                <div class="menu-item" onclick="switchAdminTab('orders')">📋 Đơn Hàng</div>
+                <div class="menu-item" onclick="switchAdminTab('vouchers')">🎫 Voucher</div>
+                <div class="menu-item" onclick="switchAdminTab('keys')">🔑 Kho Key</div>
+                <div class="menu-item" onclick="switchAdminTab('settings')">⚙️ Cài Đặt</div>
             </div>
-
-            <!-- Quản lý kho key -->
-            <div class="admin-card">
-                <h3>🔑 Quản lý kho key</h3>
-                <select id="keyProductSelect"></select>
-                <textarea id="keyListInput" rows="3" placeholder="Nhập key, mỗi key 1 dòng"></textarea>
-                <button class="btn btn-primary" onclick="addKeys()">➕ Thêm key</button>
-                <div id="keyResult" class="result"></div>
-                <button class="btn btn-outline btn-sm" onclick="viewKeyStock()" style="margin-top:4px;">📊 Xem kho</button>
-                <div id="keyStockView" style="margin-top:4px;max-height:100px;overflow-y:auto;font-size:12px;color:#9ca3af;"></div>
+            <div class="admin-content" id="adminContent">
+                <!-- Nội dung sẽ được render bằng JS -->
             </div>
-
-            <!-- Quản lý đơn hàng + Cài đặt -->
-            <div class="admin-card">
-                <h3>📦 Quản lý đơn hàng</h3>
-                <div class="toggle-group">
-                    <label><input type="checkbox" id="autoDelivery" checked> Tự động giao key</label>
-                </div>
-                <div id="orderList" class="transaction-list" style="max-height:150px;"></div>
-            </div>
-
-            <!-- Nạp tiền -->
-            <div class="admin-card">
-                <h3>💰 Duyệt nạp tiền</h3>
-                <div id="depositList" class="transaction-list" style="max-height:150px;"></div>
-            </div>
-
-            <!-- Quản lý giá -->
-            <div class="admin-card">
-                <h3>💵 Đổi giá sản phẩm</h3>
-                <select id="priceProductSelect"></select>
-                <input type="number" id="newPrice" placeholder="Giá mới">
-                <button class="btn btn-warning" onclick="updatePrice()">Cập nhật</button>
-                <div id="priceResult" class="result"></div>
-            </div>
-
-        </div>
-
-        <!-- Giao dịch -->
-        <div style="margin-top:16px;">
-            <h3 style="color:#c4b5d4;font-size:15px;margin-bottom:8px;">📋 Lịch sử giao dịch</h3>
-            <div class="transaction-list" id="transactionList" style="max-height:200px;"></div>
         </div>
     </div>
 
 </div>
 
-<!-- AUTH MODAL -->
+<!-- FOOTER -->
+<div class="footer">
+    <div class="footer-grid">
+        <div>
+            <h4>SHOPVIP</h4>
+            <p>Cửa hàng gaming gear cao cấp uy tín hàng đầu Việt Nam.</p>
+        </div>
+        <div>
+            <h4>HỖ TRỢ</h4>
+            <a href="#">Chính sách đổi trả</a>
+            <a href="#">Hướng dẫn mua hàng</a>
+            <a href="#">Liên hệ</a>
+        </div>
+        <div>
+            <h4>SẢN PHẨM</h4>
+            <a href="#">Chuột Gaming</a>
+            <a href="#">Bàn Phím Cơ</a>
+            <a href="#">Tai Nghe</a>
+            <a href="#">Màn Hình</a>
+        </div>
+        <div>
+            <h4>TÀI KHOẢN</h4>
+            <a href="#" onclick="openLogin();return false;">Đăng nhập</a>
+            <a href="#" onclick="openRegister();return false;">Đăng ký</a>
+            <a href="#">Lịch sử đơn hàng</a>
+            <a href="#">Ví của tôi</a>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL -->
 <div class="modal" id="authModal">
     <div class="modal-content">
-        <h2 id="authTitle">Đăng nhập</h2>
-        <div class="sub" id="authSub">Đăng nhập để mua sắm</div>
-        <input type="text" id="authUsername" placeholder="Tên đăng nhập">
-        <input type="password" id="authPassword" placeholder="Mật khẩu">
-        <button class="btn btn-primary" id="authBtn" onclick="handleAuth()">Đăng nhập</button>
-        <div id="authMessage" class="error"></div>
+        <div class="modal-logo">SHOPVIP<span>.COM</span></div>
+        <div class="modal-title" id="authTitle">Đăng Nhập</div>
+        <div class="modal-sub" id="authSub">Chào mừng trở lại! Đăng nhập để tiếp tục.</div>
+        <div class="tab-group">
+            <button class="tab active" id="tabLogin" onclick="switchTab('login')">ĐĂNG NHẬP</button>
+            <button class="tab" id="tabRegister" onclick="switchTab('register')">ĐĂNG KÝ</button>
+        </div>
+        <div class="modal-sub" style="font-size:11px;margin-bottom:10px;">
+            Bạn cần đăng nhập hoặc tạo tài khoản để sử dụng ShopVIP.com
+        </div>
+        <div id="loginForm">
+            <div class="input-group">
+                <label>EMAIL</label>
+                <input type="text" id="authUsername" placeholder="email@shopvip.com">
+            </div>
+            <div class="input-group">
+                <label>MẬT KHẨU</label>
+                <input type="password" id="authPassword" placeholder="••••••••">
+            </div>
+            <button class="btn btn-primary" onclick="handleLogin()">ĐĂNG NHẬP →</button>
+            <div id="authMessage" class="error"></div>
+        </div>
+        <div id="registerForm" style="display:none;">
+            <div class="input-group">
+                <label>HỌ VÀ TÊN</label>
+                <input type="text" id="regName" placeholder="Nguyễn Văn A">
+            </div>
+            <div class="input-group">
+                <label>EMAIL</label>
+                <input type="email" id="regEmail" placeholder="email@shopvip.com">
+            </div>
+            <div class="input-group">
+                <label>SỐ ĐIỆN THOẠI</label>
+                <input type="text" id="regPhone" placeholder="0912 345 678">
+            </div>
+            <div class="input-group">
+                <label>MẬT KHẨU (Ít nhất 6 ký tự)</label>
+                <input type="password" id="regPassword" placeholder="••••••••">
+            </div>
+            <div class="input-group">
+                <label>XÁC NHẬN MẬT KHẨU</label>
+                <input type="password" id="regConfirm" placeholder="Nhập lại mật khẩu">
+            </div>
+            <button class="btn btn-primary" onclick="handleRegister()">TẠO TÀI KHOẢN →</button>
+            <div id="regMessage" class="error"></div>
+        </div>
         <div class="switch" id="authSwitch">
-            Chưa có tài khoản? <a onclick="switchAuth()">Đăng ký ngay</a>
+            Chưa có tài khoản? <a onclick="switchTab('register')">Đăng ký</a>
         </div>
     </div>
 </div>
 
 <script>
 // ==================== DATA ====================
-let products = [
-    { id: 1, name: 'Razer DeathAdder V3', category: 'chuột', price: 1890000, desc: 'Chuột gaming siêu nhẹ 59g' },
-    { id: 2, name: 'Logitech G Pro X', category: 'bàn phím', price: 3490000, desc: 'Bàn phím cơ không dây' },
-    { id: 3, name: 'SteelSeries Arctis Nova 7', category: 'tai nghe', price: 4290000, desc: 'Tai nghe không dây 360°' },
-    { id: 4, name: 'ASUS ROG Swift 360Hz', category: 'màn hình', price: 12990000, desc: 'Màn hình 24.5" 360Hz' },
-    { id: 5, name: 'Corsair K100 RGB', category: 'bàn phím', price: 5290000, desc: 'Bàn phím cơ cao cấp' },
-    { id: 6, name: 'Logitech G502 X', category: 'chuột', price: 2490000, desc: 'Chuột gaming có dây' },
-];
-
-let keyStock = [
-    { id: 1, productId: 1, key: 'KEY-RAZER-001', status: 'available', buyer: null },
-    { id: 2, productId: 1, key: 'KEY-RAZER-002', status: 'available', buyer: null },
-    { id: 3, productId: 2, key: 'KEY-LOGI-001', status: 'available', buyer: null },
-    { id: 4, productId: 4, key: 'KEY-ASUS-001', status: 'available', buyer: null },
-];
-
+let products = [];
+let keyStock = [];
 let orders = [];
 let deposits = [];
 let transactions = [];
+let vouchers = [];
 let users = [
-    { username: 'admin', password: 'phc51580', role: 'admin', balance: 0 },
+    { username: 'admin', password: 'phc51580', role: 'admin', balance: 0, name: 'Admin' },
 ];
 let currentUser = null;
 let isAdmin = false;
-let authMode = 'login';
-let nextId = 7;
-let nextKeyId = 5;
+let nextId = 1;
+let nextKeyId = 1;
 let nextOrderId = 1;
 let nextDepositId = 1;
+let currentTab = 'login';
+let adminTab = 'dashboard';
 
-// ==================== RENDER ====================
+// ==================== RENDER PRODUCTS ====================
 function renderProducts(filter = 'all') {
     const grid = document.getElementById('productGrid');
     const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
     
     if (filtered.length === 0) {
-        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:#6b7280;padding:30px;">Không có sản phẩm</div>`;
+        grid.innerHTML = `
+            <div style="grid-column:1/-1;text-align:center;color:#4a4a7a;padding:30px;border:1px dashed #2d2d5e;border-radius:8px;">
+                <div style="font-size:32px;margin-bottom:6px;">🛒</div>
+                <div style="font-size:14px;color:#6b7280;">Chưa có sản phẩm</div>
+                <div style="font-size:12px;color:#4a4a7a;">Đăng nhập admin để thêm</div>
+            </div>
+        `;
         return;
     }
 
     grid.innerHTML = filtered.map(p => {
         const available = keyStock.filter(k => k.productId === p.id && k.status === 'available').length;
+        const sale = p.oldPrice ? Math.round((1 - p.price/p.oldPrice)*100) : 0;
         return `
         <div class="product-card">
+            ${sale > 0 ? `<div class="sale-badge">-${sale}%</div>` : ''}
             <div class="badge">${p.category}</div>
             <div class="name">${p.name}</div>
             <div class="cat">📂 ${p.category}</div>
-            <div class="price">${p.price.toLocaleString()}đ</div>
-            <div class="desc">${p.desc}</div>
-            <div class="stock">🔑 Còn ${available} key</div>
+            <div class="price-row">
+                <span class="price">${p.price.toLocaleString()}đ</span>
+                ${p.oldPrice ? `<span class="old-price">${p.oldPrice.toLocaleString()}đ</span>` : ''}
+            </div>
+            <div class="rating">⭐ ★ ★ ★ ★ 5 (0)</div>
             ${currentUser && !isAdmin ? `
                 <button class="btn btn-primary" onclick="buyProduct(${p.id})" ${available === 0 ? 'disabled style="opacity:0.5;"' : ''}>
-                    🛒 Mua ngay
+                    🛒 MUA NGAY
                 </button>
             ` : ''}
             ${isAdmin ? `
             <div class="admin-actions">
                 <button class="btn btn-warning btn-sm" onclick="editProduct(${p.id})">✏️</button>
                 <button class="btn btn-danger btn-sm" onclick="deleteProduct(${p.id})">🗑️</button>
-                <button class="btn btn-primary btn-sm" onclick="viewKeysForProduct(${p.id})">🔑</button>
             </div>` : ''}
         </div>
     `}).join('');
@@ -745,11 +937,14 @@ function filterProducts(category, btn) {
 
 // ==================== AUTH ====================
 function openLogin() {
-    authMode = 'login';
-    document.getElementById('authTitle').textContent = 'Đăng nhập';
-    document.getElementById('authSub').textContent = 'Đăng nhập để mua sắm';
-    document.getElementById('authBtn').textContent = 'Đăng nhập';
-    document.getElementById('authSwitch').innerHTML = 'Chưa có tài khoản? <a onclick="switchAuth()">Đăng ký ngay</a>';
+    currentTab = 'login';
+    document.getElementById('authTitle').textContent = 'Đăng Nhập';
+    document.getElementById('authSub').textContent = 'Chào mừng trở lại! Đăng nhập để tiếp tục.';
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('registerForm').style.display = 'none';
+    document.getElementById('tabLogin').classList.add('active');
+    document.getElementById('tabRegister').classList.remove('active');
+    document.getElementById('authSwitch').innerHTML = 'Chưa có tài khoản? <a onclick="switchTab(\'register\')">Đăng ký</a>';
     document.getElementById('authUsername').value = '';
     document.getElementById('authPassword').value = '';
     document.getElementById('authMessage').textContent = '';
@@ -757,49 +952,40 @@ function openLogin() {
 }
 
 function openRegister() {
-    authMode = 'register';
-    document.getElementById('authTitle').textContent = 'Đăng ký';
-    document.getElementById('authSub').textContent = 'Tạo tài khoản mới';
-    document.getElementById('authBtn').textContent = 'Đăng ký';
-    document.getElementById('authSwitch').innerHTML = 'Đã có tài khoản? <a onclick="switchAuth()">Đăng nhập</a>';
-    document.getElementById('authUsername').value = '';
-    document.getElementById('authPassword').value = '';
-    document.getElementById('authMessage').textContent = '';
+    currentTab = 'register';
+    document.getElementById('authTitle').textContent = 'Tạo Tài Khoản';
+    document.getElementById('authSub').textContent = 'Tạo tài khoản ShopVIP miễn phí.';
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'block';
+    document.getElementById('tabLogin').classList.remove('active');
+    document.getElementById('tabRegister').classList.add('active');
+    document.getElementById('authSwitch').innerHTML = 'Đã có tài khoản? <a onclick="switchTab(\'login\')">Đăng nhập</a>';
+    document.getElementById('regName').value = '';
+    document.getElementById('regEmail').value = '';
+    document.getElementById('regPhone').value = '';
+    document.getElementById('regPassword').value = '';
+    document.getElementById('regConfirm').value = '';
+    document.getElementById('regMessage').textContent = '';
     document.getElementById('authModal').classList.add('active');
 }
 
-function switchAuth() {
-    authMode === 'login' ? openRegister() : openLogin();
+function switchTab(tab) {
+    tab === 'login' ? openLogin() : openRegister();
 }
 
-function handleAuth() {
+function handleLogin() {
     const username = document.getElementById('authUsername').value.trim();
     const password = document.getElementById('authPassword').value.trim();
     const msg = document.getElementById('authMessage');
 
     if (!username || !password) {
         msg.textContent = '⚠️ Vui lòng nhập đầy đủ!';
-        msg.className = 'error';
-        return;
-    }
-
-    if (authMode === 'register') {
-        if (users.find(u => u.username === username)) {
-            msg.textContent = '⚠️ Tên đăng nhập đã tồn tại!';
-            msg.className = 'error';
-            return;
-        }
-        users.push({ username, password, role: 'user', balance: 0 });
-        msg.textContent = '✅ Đăng ký thành công! Vui lòng đăng nhập.';
-        msg.className = 'success';
-        setTimeout(() => openLogin(), 1200);
         return;
     }
 
     const user = users.find(u => u.username === username && u.password === password);
     if (!user) {
         msg.textContent = '❌ Sai tên đăng nhập hoặc mật khẩu!';
-        msg.className = 'error';
         return;
     }
 
@@ -812,15 +998,43 @@ function handleAuth() {
     
     if (isAdmin) {
         document.getElementById('adminPanel').classList.add('active');
-        populateProductSelects();
-        renderOrders();
-        renderDeposits();
-        updateTransactionList();
+        renderAdminContent();
         alert('👋 Chào admin!');
     } else {
         document.getElementById('adminPanel').classList.remove('active');
-        alert(`👋 Chào ${username}!`);
+        alert(`👋 Chào ${user.name || user.username}!`);
     }
+}
+
+function handleRegister() {
+    const name = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const phone = document.getElementById('regPhone').value.trim();
+    const password = document.getElementById('regPassword').value;
+    const confirm = document.getElementById('regConfirm').value;
+    const msg = document.getElementById('regMessage');
+
+    if (!name || !email || !phone || !password || !confirm) {
+        msg.textContent = '⚠️ Vui lòng điền đầy đủ!';
+        return;
+    }
+    if (password.length < 6) {
+        msg.textContent = '⚠️ Mật khẩu phải có ít nhất 6 ký tự!';
+        return;
+    }
+    if (password !== confirm) {
+        msg.textContent = '⚠️ Mật khẩu xác nhận không khớp!';
+        return;
+    }
+    if (users.find(u => u.username === email)) {
+        msg.textContent = '⚠️ Email đã được đăng ký!';
+        return;
+    }
+
+    users.push({ username: email, password, role: 'user', balance: 0, name, phone });
+    msg.style.color = '#22c55e';
+    msg.textContent = '✅ Đăng ký thành công! Vui lòng đăng nhập.';
+    setTimeout(() => { openLogin(); document.getElementById('authUsername').value = email; }, 1500);
 }
 
 function logout() {
@@ -841,7 +1055,7 @@ function updateUI() {
     const depositBtn = document.getElementById('depositBtn');
 
     if (currentUser) {
-        display.textContent = `👤 ${currentUser.username}`;
+        display.textContent = `👤 ${currentUser.name || currentUser.username}`;
         balance.textContent = `💰 ${currentUser.balance.toLocaleString()}đ`;
         balance.style.display = 'inline-block';
         loginBtn.style.display = 'none';
@@ -860,7 +1074,7 @@ function updateUI() {
     }
 }
 
-// ==================== BUY PRODUCT ====================
+// ==================== BUY ====================
 function buyProduct(productId) {
     if (!currentUser) { alert('⚠️ Vui lòng đăng nhập!'); openLogin(); return; }
     if (isAdmin) { alert('⚠️ Admin không thể mua!'); return; }
@@ -878,25 +1092,19 @@ function buyProduct(productId) {
 
     if (!confirm(`Mua ${product.name} - ${product.price.toLocaleString()}đ?`)) return;
 
-    // Trừ tiền
     currentUser.balance -= product.price;
-    
-    // Gán key
     availableKey.status = 'sold';
     availableKey.buyer = currentUser.username;
 
-    // Tạo đơn hàng
-    const order = {
+    orders.push({
         id: nextOrderId++,
-        productId: productId,
-        productName: product.name,
+        productId, productName: product.name,
         customer: currentUser.username,
         amount: product.price,
         key: availableKey.key,
         status: 'completed',
         date: new Date().toLocaleString()
-    };
-    orders.push(order);
+    });
 
     transactions.unshift({
         code: `mua-${Date.now().toString(36)}`,
@@ -909,54 +1117,260 @@ function buyProduct(productId) {
 
     renderProducts();
     renderMyKeys();
-    updateTransactionList();
+    if (isAdmin) renderAdminContent();
     updateUI();
-    
-    alert(`✅ Mua thành công!\n🔑 Key: ${availableKey.key}\n💳 Đã trừ ${product.price.toLocaleString()}đ`);
+    alert(`✅ Mua thành công!\n🔑 Key: ${availableKey.key}`);
 }
 
-// ==================== MY KEYS ====================
 function renderMyKeys() {
     if (!currentUser || isAdmin) return;
     const list = document.getElementById('myKeysList');
     const myKeys = keyStock.filter(k => k.buyer === currentUser.username && k.status === 'sold');
-    
     if (myKeys.length === 0) {
-        list.innerHTML = '<div style="color:#6b7280;padding:10px;">Chưa có key nào</div>';
+        list.innerHTML = '<div style="color:#6b7280;padding:6px;">Chưa có key nào</div>';
         return;
     }
-
     list.innerHTML = myKeys.map(k => {
-        const product = products.find(p => p.id === k.productId);
-        return `
-        <div class="key-item">
-            <div>
-                <div class="key-code">🔑 ${k.key}</div>
-                <div class="key-info">${product ? product.name : ''}</div>
-            </div>
-            <div class="key-info">✅ Đã mua</div>
-        </div>
-    `}).join('');
+        const p = products.find(pr => pr.id === k.productId);
+        return `<div class="key-item"><span class="key-code">🔑 ${k.key}</span><span>${p ? p.name : ''}</span></div>`;
+    }).join('');
 }
 
-// ==================== ADMIN: PRODUCTS ====================
+// ==================== ADMIN CONTENT ====================
+function switchAdminTab(tab) {
+    adminTab = tab;
+    document.querySelectorAll('.admin-sidebar .menu-item').forEach(el => el.classList.remove('active'));
+    document.querySelector(`.admin-sidebar .menu-item[onclick*="${tab}"]`)?.classList.add('active');
+    renderAdminContent();
+}
+
+function renderAdminContent() {
+    const content = document.getElementById('adminContent');
+    const tabs = {
+        dashboard: renderDashboard,
+        deposits: renderDepositsAdmin,
+        products: renderProductsAdmin,
+        orders: renderOrdersAdmin,
+        vouchers: renderVouchersAdmin,
+        keys: renderKeysAdmin,
+        settings: renderSettingsAdmin
+    };
+    content.innerHTML = (tabs[adminTab] || renderDashboard)();
+}
+
+function renderDashboard() {
+    return `
+        <h2>📊 Dashboard</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px;">
+            <div style="background:rgba(0,0,0,0.2);padding:14px;border-radius:8px;text-align:center;">
+                <div style="font-size:24px;color:#8b5cf6;">${products.length}</div>
+                <div style="font-size:12px;color:#6b7280;">Sản phẩm</div>
+            </div>
+            <div style="background:rgba(0,0,0,0.2);padding:14px;border-radius:8px;text-align:center;">
+                <div style="font-size:24px;color:#22c55e;">${keyStock.filter(k=>k.status==='available').length}</div>
+                <div style="font-size:12px;color:#6b7280;">Key còn</div>
+            </div>
+            <div style="background:rgba(0,0,0,0.2);padding:14px;border-radius:8px;text-align:center;">
+                <div style="font-size:24px;color:#f59e0b;">${orders.filter(o=>o.status==='pending').length}</div>
+                <div style="font-size:12px;color:#6b7280;">Đơn chờ</div>
+            </div>
+            <div style="background:rgba(0,0,0,0.2);padding:14px;border-radius:8px;text-align:center;">
+                <div style="font-size:24px;color:#818cf8;">${deposits.filter(d=>d.status==='waiting').length}</div>
+                <div style="font-size:12px;color:#6b7280;">Nạp chờ</div>
+            </div>
+        </div>
+        <div style="margin-top:12px;">
+            <h3 style="color:#c4b5d4;font-size:14px;margin-bottom:6px;">📋 Giao dịch gần đây</h3>
+            <div class="transaction-list">
+                ${transactions.slice(0,10).map(t => `
+                    <div class="transaction-item">
+                        <span><span class="code">#${t.code}</span> ${t.type === 'nạp' ? '💰 Nạp' : '🛒 Mua'} ${t.amount?.toLocaleString()}đ</span>
+                        <span class="status ${t.status}">${t.status === 'completed' ? '✅ Thành công' : '⏳ Chờ'}</span>
+                    </div>
+                `).join('') || '<div style="color:#6b7280;padding:6px;">Chưa có giao dịch</div>'}
+            </div>
+        </div>
+    `;
+}
+
+function renderProductsAdmin() {
+    return `
+        <h2>📦 Sản Phẩm</h2>
+        <div style="margin-bottom:12px;">
+            <button class="btn btn-primary" onclick="document.getElementById('addProductForm').style.display=document.getElementById('addProductForm').style.display==='none'?'block':'none'">
+                ➕ Thêm Sản Phẩm
+            </button>
+        </div>
+        <div id="addProductForm" style="display:none;background:rgba(0,0,0,0.2);padding:16px;border-radius:8px;margin-bottom:16px;">
+            <div class="admin-form">
+                <div class="full"><label>Tên sản phẩm</label><input type="text" id="prodName" placeholder="VD: File 50k"></div>
+                <div><label>Danh mục</label><input type="text" id="prodCategory" placeholder="VD: file"></div>
+                <div><label>Giá bán (VND)</label><input type="number" id="prodPrice" placeholder="50000"></div>
+                <div><label>Giá cũ (để trống nếu không)</label><input type="number" id="prodOldPrice" placeholder="100000"></div>
+                <div class="full"><label>Mô tả</label><textarea id="prodDesc" rows="2" placeholder="Mô tả sản phẩm"></textarea></div>
+                <div class="full"><button class="btn btn-success" onclick="addProduct()">Lưu sản phẩm</button></div>
+                <div id="addResult" class="result" style="grid-column:1/-1;"></div>
+            </div>
+        </div>
+        <table class="admin-table">
+            <thead><tr><th>TÊN SẢN PHẨM</th><th>DANH MỤC</th><th>GIÁ</th><th>GIÁ CŨ</th><th>HÀNH ĐỘNG</th></tr></thead>
+            <tbody>
+                ${products.map(p => `
+                    <tr>
+                        <td>${p.name}</td>
+                        <td>${p.category}</td>
+                        <td>${p.price.toLocaleString()}đ</td>
+                        <td>${p.oldPrice ? p.oldPrice.toLocaleString()+'đ' : '-'}</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm" onclick="editProduct(${p.id})">✏️</button>
+                            <button class="btn btn-danger btn-sm" onclick="deleteProduct(${p.id})">🗑️</button>
+                        </td>
+                    </tr>
+                `).join('') || '<tr><td colspan="5" style="text-align:center;color:#6b7280;">Chưa có sản phẩm</td></tr>'}
+            </tbody>
+        </table>
+    `;
+}
+
+function renderDepositsAdmin() {
+    const waiting = deposits.filter(d => d.status === 'waiting');
+    return `
+        <h2>💰 Yêu Cầu Nạp Tiền</h2>
+        ${waiting.length === 0 ? '<div style="color:#6b7280;">Không có yêu cầu nạp</div>' : ''}
+        ${waiting.map(d => `
+            <div class="transaction-item" style="padding:8px 0;">
+                <span><span class="code">${d.code}</span> - ${d.username} - ${d.amount.toLocaleString()}đ</span>
+                <div>
+                    <span class="status waiting">Chờ duyệt</span>
+                    <button class="btn btn-success btn-sm" onclick="approveDeposit(${d.id})">✅ Duyệt</button>
+                    <button class="btn btn-danger btn-sm" onclick="rejectDeposit(${d.id})">❌ Từ chối</button>
+                </div>
+            </div>
+        `).join('')}
+    `;
+}
+
+function renderOrdersAdmin() {
+    const pending = orders.filter(o => o.status === 'pending');
+    return `
+        <h2>📋 Đơn Hàng</h2>
+        <div class="toggle-group">
+            <label><input type="checkbox" id="autoDelivery" checked> Tự động giao key</label>
+        </div>
+        ${pending.length === 0 ? '<div style="color:#6b7280;">Không có đơn hàng chờ</div>' : ''}
+        ${pending.map(o => `
+            <div class="transaction-item" style="padding:8px 0;">
+                <span>${o.productName} - ${o.customer} - ${o.amount.toLocaleString()}đ</span>
+                <div>
+                    <span class="status pending">Chờ</span>
+                    <button class="btn btn-success btn-sm" onclick="processOrder(${o.id})">✅ Duyệt</button>
+                    <button class="btn btn-danger btn-sm" onclick="rejectOrder(${o.id})">❌ Từ chối</button>
+                </div>
+            </div>
+        `).join('')}
+    `;
+}
+
+function renderVouchersAdmin() {
+    return `
+        <h2>🎫 Voucher</h2>
+        <div style="background:rgba(0,0,0,0.2);padding:16px;border-radius:8px;margin-bottom:14px;">
+            <h3 style="color:#c4b5d4;font-size:14px;margin-bottom:8px;">Tạo Voucher Mới</h3>
+            <div class="admin-form" style="grid-template-columns:1fr 1fr;">
+                <div><label>MÃ VOUCHER</label><input type="text" id="voucherCode" placeholder="NHANVIEN_PHUC_VIP"></div>
+                <div><label>GIẢM (%)</label><input type="number" id="voucherDiscount" placeholder="100"></div>
+                <div><label>GIỚI HẠN DÙNG (0 = không)</label><input type="number" id="voucherLimit" value="0"></div>
+                <div><label>MÔ TẢ</label><input type="text" id="voucherDesc" placeholder="chỉ admin sài được"></div>
+                <div class="full"><button class="btn btn-primary" onclick="createVoucher()">Tạo Voucher</button></div>
+                <div id="voucherResult" class="result" style="grid-column:1/-1;"></div>
+            </div>
+        </div>
+        <h3 style="color:#c4b5d4;font-size:14px;margin-bottom:6px;">Danh Sách Voucher</h3>
+        <div class="voucher-list">
+            ${vouchers.map(v => `
+                <div class="voucher-item">
+                    <span class="code">${v.code}</span>
+                    <span class="discount">-${v.discount}%</span>
+                    <span style="color:#6b7280;font-size:12px;">${v.desc || ''}</span>
+                </div>
+            `).join('') || '<div style="color:#6b7280;">Chưa có voucher</div>'}
+        </div>
+    `;
+}
+
+function renderKeysAdmin() {
+    return `
+        <h2>🔑 Kho Key</h2>
+        <div style="background:rgba(0,0,0,0.2);padding:16px;border-radius:8px;margin-bottom:14px;">
+            <div class="admin-form">
+                <div><label>Chọn sản phẩm</label>
+                    <select id="keyProductSelect">${products.map(p => `<option value="${p.id}">${p.name}</option>`).join('')}</select>
+                </div>
+                <div class="full"><label>Nhập key (mỗi key 1 dòng)</label>
+                    <textarea id="keyListInput" rows="4" placeholder="KEY-XXXX-1234"></textarea>
+                </div>
+                <div class="full"><button class="btn btn-primary" onclick="addKeys()">➕ Thêm key</button></div>
+                <div id="keyResult" class="result" style="grid-column:1/-1;"></div>
+            </div>
+        </div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:10px;">
+            <span>📦 Tổng: ${keyStock.length}</span>
+            <span style="color:#22c55e;">✅ Còn: ${keyStock.filter(k=>k.status==='available').length}</span>
+            <span style="color:#f59e0b;">🔴 Đã bán: ${keyStock.filter(k=>k.status==='sold').length}</span>
+        </div>
+        <div style="max-height:200px;overflow-y:auto;font-size:13px;">
+            ${keyStock.slice(0,30).map(k => {
+                const p = products.find(pr => pr.id === k.productId);
+                return `<div style="padding:3px 0;border-bottom:1px solid #1a1a3e;">${k.key} - ${p ? p.name : ''} - ${k.status}</div>`;
+            }).join('') || '<div style="color:#6b7280;">Chưa có key</div>'}
+            ${keyStock.length > 30 ? `<div style="color:#6b7280;">... và ${keyStock.length - 30} key khác</div>` : ''}
+        </div>
+    `;
+}
+
+function renderSettingsAdmin() {
+    return `
+        <h2>⚙️ Cài Đặt</h2>
+        <div style="background:rgba(0,0,0,0.2);padding:16px;border-radius:8px;">
+            <div class="admin-form">
+                <div><label>Tên shop</label><input type="text" id="shopName" value="SHOPVIP.COM"></div>
+                <div><label>Màu nền</label><select id="themeColor">
+                    <option value="purple">Tím - Xanh</option>
+                    <option value="blue">Xanh Dương</option>
+                    <option value="green">Xanh Lá</option>
+                </select></div>
+                <div class="full"><label>QR/Mã CK (hiển thị khi nạp tiền)</label>
+                    <div class="qr-section">
+                        <div class="qr-placeholder">📱 QR Code<br><span style="font-size:11px;color:#666;">Mã CK của bạn</span></div>
+                        <input type="text" placeholder="Số tài khoản / Mã CK" style="width:100%;padding:8px;background:rgba(0,0,0,0.3);border:1px solid #2d2d5e;border-radius:6px;color:#fff;margin-top:6px;">
+                    </div>
+                </div>
+                <div class="full"><button class="btn btn-primary" onclick="alert('✅ Đã lưu cài đặt!')">💾 Lưu cài đặt</button></div>
+            </div>
+        </div>
+    `;
+}
+
+// ==================== ADMIN FUNCTIONS ====================
 function addProduct() {
     if (!isAdmin) return;
     const name = document.getElementById('prodName').value.trim();
     const category = document.getElementById('prodCategory').value.trim();
     const price = parseInt(document.getElementById('prodPrice').value);
+    const oldPrice = parseInt(document.getElementById('prodOldPrice').value) || null;
     const desc = document.getElementById('prodDesc').value.trim();
     
-    if (!name || !category || isNaN(price) || !desc) {
+    if (!name || !category || isNaN(price)) {
         document.getElementById('addResult').textContent = '⚠️ Điền đầy đủ!';
         return;
     }
-    products.push({ id: nextId++, name, category, price, desc });
+    products.push({ id: nextId++, name, category, price, oldPrice, desc });
     renderProducts();
-    populateProductSelects();
+    renderAdminContent();
     document.getElementById('prodName').value = '';
     document.getElementById('prodCategory').value = '';
     document.getElementById('prodPrice').value = '';
+    document.getElementById('prodOldPrice').value = '';
     document.getElementById('prodDesc').value = '';
     document.getElementById('addResult').textContent = '✅ Thêm thành công!';
     document.getElementById('addResult').style.color = '#22c55e';
@@ -970,10 +1384,10 @@ function editProduct(id) {
     if (newName) p.name = newName;
     const newPrice = prompt('Giá:', p.price);
     if (newPrice) p.price = parseInt(newPrice);
-    const newDesc = prompt('Mô tả:', p.desc);
-    if (newDesc) p.desc = newDesc;
+    const newOld = prompt('Giá cũ:', p.oldPrice || '');
+    if (newOld !== null) p.oldPrice = newOld ? parseInt(newOld) : null;
     renderProducts();
-    populateProductSelects();
+    renderAdminContent();
 }
 
 function deleteProduct(id) {
@@ -982,139 +1396,63 @@ function deleteProduct(id) {
         products = products.filter(p => p.id !== id);
         keyStock = keyStock.filter(k => k.productId !== id);
         renderProducts();
-        populateProductSelects();
+        renderAdminContent();
     }
-}
-
-// ==================== ADMIN: KEYS ====================
-function populateProductSelects() {
-    ['keyProductSelect', 'priceProductSelect'].forEach(id => {
-        const select = document.getElementById(id);
-        if (select) {
-            select.innerHTML = products.map(p => 
-                `<option value="${p.id}">${p.name}</option>`
-            ).join('');
-        }
-    });
 }
 
 function addKeys() {
     if (!isAdmin) return;
     const productId = parseInt(document.getElementById('keyProductSelect').value);
     const keysText = document.getElementById('keyListInput').value.trim();
-    
-    if (!keysText) {
-        document.getElementById('keyResult').textContent = '⚠️ Nhập key!';
-        return;
-    }
-    
+    if (!keysText) { document.getElementById('keyResult').textContent = '⚠️ Nhập key!'; return; }
     const keys = keysText.split('\n').map(k => k.trim()).filter(k => k.length > 0);
     let added = 0;
     keys.forEach(key => {
         if (!keyStock.find(k => k.key === key)) {
-            keyStock.push({
-                id: nextKeyId++,
-                productId: productId,
-                key: key,
-                status: 'available',
-                buyer: null
-            });
+            keyStock.push({ id: nextKeyId++, productId, key, status: 'available', buyer: null });
             added++;
         }
     });
-    
     document.getElementById('keyResult').textContent = `✅ Đã thêm ${added} key!`;
     document.getElementById('keyResult').style.color = '#22c55e';
     document.getElementById('keyListInput').value = '';
     renderProducts();
-}
-
-function viewKeyStock() {
-    if (!isAdmin) return;
-    const view = document.getElementById('keyStockView');
-    const available = keyStock.filter(k => k.status === 'available').length;
-    const sold = keyStock.filter(k => k.status === 'sold').length;
-    
-    view.innerHTML = `
-        <div>📦 Tổng: ${keyStock.length} | ✅ Còn: ${available} | 🔴 Đã bán: ${sold}</div>
-        ${keyStock.slice(0, 10).map(k => {
-            const p = products.find(pr => pr.id === k.productId);
-            return `<div>${k.key} - ${p ? p.name : ''} - ${k.status}</div>`;
-        }).join('')}
-        ${keyStock.length > 10 ? `<div>... và ${keyStock.length - 10} key khác</div>` : ''}
-    `;
-}
-
-function viewKeysForProduct(productId) {
-    if (!isAdmin) return;
-    const keys = keyStock.filter(k => k.productId === productId);
-    const p = products.find(pr => pr.id === productId);
-    alert(`🔑 Kho key cho ${p ? p.name : ''}:\n\n` + 
-        keys.map(k => `${k.key} - ${k.status}`).join('\n') +
-        `\n\nTổng: ${keys.length} | Còn: ${keys.filter(k => k.status === 'available').length}`);
-}
-
-// ==================== ADMIN: ORDERS ====================
-function renderOrders() {
-    const list = document.getElementById('orderList');
-    const pending = orders.filter(o => o.status === 'pending');
-    if (pending.length === 0) {
-        list.innerHTML = '<div style="color:#6b7280;text-align:center;padding:8px;">Không có đơn hàng</div>';
-        return;
-    }
-    list.innerHTML = pending.map(o => `
-        <div class="transaction-item">
-            <span>${o.productName}<br><small>${o.customer} - ${o.amount.toLocaleString()}đ</small></span>
-            <div>
-                <span class="status pending">Chờ</span>
-                <div class="admin-actions-small">
-                    <button class="btn btn-success btn-sm" onclick="processOrder(${o.id})">✅</button>
-                    <button class="btn btn-danger btn-sm" onclick="rejectOrder(${o.id})">❌</button>
-                </div>
-            </div>
-        </div>
-    `).join('');
+    renderAdminContent();
 }
 
 function processOrder(id) {
     if (!isAdmin) return;
     const order = orders.find(o => o.id === id);
     if (!order) return;
-    
-    const autoDelivery = document.getElementById('autoDelivery').checked;
+    const autoDelivery = document.getElementById('autoDelivery')?.checked ?? true;
     
     if (autoDelivery) {
-        // Tự động giao key
         const availableKey = keyStock.find(k => k.productId === order.productId && k.status === 'available');
         if (availableKey) {
             availableKey.status = 'sold';
             availableKey.buyer = order.customer;
             order.key = availableKey.key;
             order.status = 'completed';
-            alert(`✅ Đã giao key tự động: ${availableKey.key}`);
+            alert(`✅ Đã giao key: ${availableKey.key}`);
         } else {
-            alert('❌ Hết key! Vui lòng nhập key mới.');
-            return;
+            alert('❌ Hết key! Vui lòng nhập thủ công.');
+            const manualKey = prompt('📝 Nhập key để giao:');
+            if (!manualKey) return;
+            order.key = manualKey;
+            order.status = 'completed';
+            if (!keyStock.find(k => k.key === manualKey)) {
+                keyStock.push({ id: nextKeyId++, productId: order.productId, key: manualKey, status: 'sold', buyer: order.customer });
+            }
         }
     } else {
-        // Thủ công: admin nhập key
-        const manualKey = prompt('📝 Nhập key để giao cho khách:');
+        const manualKey = prompt('📝 Nhập key để giao:');
         if (!manualKey) return;
         order.key = manualKey;
         order.status = 'completed';
-        // Thêm key vào kho nếu chưa có
         if (!keyStock.find(k => k.key === manualKey)) {
-            keyStock.push({
-                id: nextKeyId++,
-                productId: order.productId,
-                key: manualKey,
-                status: 'sold',
-                buyer: order.customer
-            });
+            keyStock.push({ id: nextKeyId++, productId: order.productId, key: manualKey, status: 'sold', buyer: order.customer });
         }
-        alert(`✅ Đã giao key thủ công: ${manualKey}`);
     }
-    
     transactions.unshift({
         code: `order-${Date.now().toString(36)}`,
         amount: order.amount,
@@ -1123,10 +1461,8 @@ function processOrder(id) {
         detail: order.productName,
         date: new Date().toLocaleString()
     });
-    
-    renderOrders();
+    renderAdminContent();
     renderProducts();
-    updateTransactionList();
 }
 
 function rejectOrder(id) {
@@ -1136,31 +1472,9 @@ function rejectOrder(id) {
     const user = users.find(u => u.username === order.customer);
     if (user) user.balance += order.amount;
     orders = orders.filter(o => o.id !== id);
-    renderOrders();
+    renderAdminContent();
     updateUI();
     alert('❌ Đã từ chối và hoàn tiền!');
-}
-
-// ==================== ADMIN: DEPOSITS ====================
-function renderDeposits() {
-    const list = document.getElementById('depositList');
-    const waiting = deposits.filter(d => d.status === 'waiting');
-    if (waiting.length === 0) {
-        list.innerHTML = '<div style="color:#6b7280;text-align:center;padding:8px;">Không có yêu cầu</div>';
-        return;
-    }
-    list.innerHTML = waiting.map(d => `
-        <div class="transaction-item">
-            <span>💰 ${d.code}<br><small>${d.username} - ${d.amount.toLocaleString()}đ</small></span>
-            <div>
-                <span class="status waiting">Chờ</span>
-                <div class="admin-actions-small">
-                    <button class="btn btn-success btn-sm" onclick="approveDeposit(${d.id})">✅</button>
-                    <button class="btn btn-danger btn-sm" onclick="rejectDeposit(${d.id})">❌</button>
-                </div>
-            </div>
-        </div>
-    `).join('');
 }
 
 function approveDeposit(id) {
@@ -1178,8 +1492,7 @@ function approveDeposit(id) {
         detail: `${d.username} nạp ${d.amount.toLocaleString()}đ`,
         date: new Date().toLocaleString()
     });
-    renderDeposits();
-    updateTransactionList();
+    renderAdminContent();
     updateUI();
     alert(`✅ Duyệt nạp ${d.amount.toLocaleString()}đ cho ${d.username}!`);
 }
@@ -1187,15 +1500,13 @@ function approveDeposit(id) {
 function rejectDeposit(id) {
     if (!isAdmin) return;
     deposits = deposits.filter(d => d.id !== id);
-    renderDeposits();
+    renderAdminContent();
     alert('❌ Từ chối nạp!');
 }
 
-// ==================== USER: DEPOSIT ====================
 function userDeposit() {
     if (!currentUser) { alert('⚠️ Vui lòng đăng nhập!'); openLogin(); return; }
     if (isAdmin) { alert('⚠️ Admin dùng chức năng duyệt!'); return; }
-    
     const amount = prompt('💰 Nhập số tiền cần nạp (VNĐ):');
     if (!amount || isNaN(parseInt(amount)) || parseInt(amount) <= 0) {
         alert('⚠️ Nhập số tiền hợp lệ!');
@@ -1204,79 +1515,52 @@ function userDeposit() {
     const code = `nap-${Date.now().toString(36)}`;
     deposits.push({
         id: nextDepositId++,
-        code: code,
+        code,
         amount: parseInt(amount),
         username: currentUser.username,
         status: 'waiting',
         date: new Date().toLocaleString()
     });
     transactions.unshift({
-        code: code,
+        code,
         amount: parseInt(amount),
         status: 'pending',
         type: 'nạp',
         detail: `Chờ duyệt ${parseInt(amount).toLocaleString()}đ`,
         date: new Date().toLocaleString()
     });
-    if (isAdmin) renderDeposits();
-    updateTransactionList();
-    alert(`✅ Tạo mã: ${code}\n💰 ${parseInt(amount).toLocaleString()}đ\n⏳ Chờ admin duyệt!`);
+    if (isAdmin) renderAdminContent();
+    alert(`✅ Tạo mã: ${code}\n💰 ${parseInt(amount).toLocaleString()}đ\n⏳ Chờ admin duyệt!\n📱 QR/Mã CK: BIDV - 1234567890`);
 }
 
-// ==================== ADMIN: PRICE ====================
-function updatePrice() {
+function createVoucher() {
     if (!isAdmin) return;
-    const productId = parseInt(document.getElementById('priceProductSelect').value);
-    const newPrice = parseInt(document.getElementById('newPrice').value);
-    if (isNaN(newPrice) || newPrice <= 0) {
-        document.getElementById('priceResult').textContent = '⚠️ Nhập giá hợp lệ!';
+    const code = document.getElementById('voucherCode').value.trim();
+    const discount = parseInt(document.getElementById('voucherDiscount').value);
+    const limit = parseInt(document.getElementById('voucherLimit').value) || 0;
+    const desc = document.getElementById('voucherDesc').value.trim();
+    if (!code || isNaN(discount) || discount < 0 || discount > 100) {
+        document.getElementById('voucherResult').textContent = '⚠️ Nhập mã và % giảm hợp lệ!';
         return;
     }
-    const product = products.find(p => p.id === productId);
-    if (product) {
-        product.price = newPrice;
-        document.getElementById('priceResult').textContent = `✅ ${product.name}: ${newPrice.toLocaleString()}đ`;
-        document.getElementById('priceResult').style.color = '#22c55e';
-        renderProducts();
-    }
-}
-
-// ==================== TRANSACTIONS ====================
-function updateTransactionList() {
-    const list = document.getElementById('transactionList');
-    if (transactions.length === 0) {
-        list.innerHTML = '<div style="color:#6b7280;text-align:center;padding:10px;">Chưa có giao dịch</div>';
-        return;
-    }
-    list.innerHTML = transactions.slice(0, 20).map(t => `
-        <div class="transaction-item">
-            <span>
-                <span class="code">#${t.code}</span>
-                ${t.type === 'nạp' ? '💰 Nạp' : '🛒 Mua'}
-                ${t.amount ? t.amount.toLocaleString()+'đ' : ''}
-                ${t.detail ? ` - ${t.detail}` : ''}
-                <br><small style="color:#6b7280;">${t.date || ''}</small>
-            </span>
-            <span class="status ${t.status}">
-                ${t.status === 'completed' ? '✅ Thành công' :
-                  t.status === 'pending' ? '⏳ Chờ' : t.status}
-            </span>
-        </div>
-    `).join('');
+    vouchers.push({ code, discount, limit, desc, used: 0 });
+    document.getElementById('voucherResult').innerHTML = `✅ Voucher <strong>${code}</strong> - Giảm ${discount}%`;
+    document.getElementById('voucherResult').style.color = '#22c55e';
+    document.getElementById('voucherCode').value = '';
+    document.getElementById('voucherDiscount').value = '';
+    document.getElementById('voucherDesc').value = '';
+    renderAdminContent();
 }
 
 // ==================== INIT ====================
 renderProducts();
-populateProductSelects();
 updateUI();
-updateTransactionList();
-renderOrders();
-renderDeposits();
-
-// Đóng modal
 document.getElementById('authModal').addEventListener('click', function(e) {
     if (e.target === this) this.classList.remove('active');
 });
+
+// Demo voucher mẫu
+vouchers.push({ code: 'ADMIN_HI_51580', discount: 20, limit: 0, desc: 'admin sài được', used: 0 });
 </script>
 </body>
     </html>

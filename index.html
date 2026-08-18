@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOPVIP - Gaming Gear</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1a0033, #2d1b69, #1a0033);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(90deg, #4a1a8a, #7b2fbe, #4a1a8a);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #9b4dff;
+            box-shadow: 0 0 30px rgba(107, 66, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            background: linear-gradient(90deg, #a855f7, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(107, 66, 255, 0.5);
+        }
+
+        .logo span {
+            font-size: 14px;
+            -webkit-text-fill-color: #a855f7;
+            background: none;
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-info .user {
+            background: rgba(255,255,255,0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #7b3fbf;
+            font-size: 14px;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            color: #fff;
+            box-shadow: 0 0 20px rgba(107, 66, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 30px rgba(107, 66, 255, 0.6);
+        }
+
+        .btn-danger {
+            background: linear-gradient(90deg, #ef4444, #dc2626);
+            color: #fff;
+        }
+
+        .btn-success {
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            color: #fff;
+        }
+
+        .btn-warning {
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+            color: #fff;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background: radial-gradient(ellipse at center, rgba(107, 66, 255, 0.15), transparent);
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            background: linear-gradient(90deg, #a855f7, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            color: #c4b5d4;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .hero .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 20px;
+        }
+
+        .hero .stats div {
+            text-align: center;
+        }
+
+        .hero .stats .num {
+            font-size: 28px;
+            font-weight: 700;
+            color: #a855f7;
+        }
+
+        .hero .stats .label {
+            font-size: 14px;
+            color: #9ca3af;
+        }
+
+        /* Admin Panel - Hidden by default */
+        .admin-panel {
+            display: none;
+            background: rgba(30, 10, 60, 0.95);
+            border: 1px solid #7b3fbf;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 40px rgba(107, 66, 255, 0.2);
+        }
+
+        .admin-panel.active {
+            display: block;
+        }
+
+        .admin-panel h2 {
+            color: #a855f7;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #3b1f6b;
+            padding-bottom: 10px;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .admin-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #2d1b69;
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s;
+        }
+
+        .admin-card:hover {
+            border-color: #a855f7;
+            background: rgba(107, 66, 255, 0.1);
+        }
+
+        .admin-card h3 {
+            color: #c4b5d4;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .admin-card input, .admin-card textarea, .admin-card select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid #3b1f6b;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .admin-card input:focus, .admin-card textarea:focus {
+            outline: none;
+            border-color: #a855f7;
+        }
+
+        .admin-card .btn {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        /* Product Grid */
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .products-header h2 {
+            color: #c4b5d4;
+        }
+
+        .category-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .category-filter button {
+            padding: 8px 20px;
+            border: 1px solid #3b1f6b;
+            border-radius: 20px;
+            background: transparent;
+            color: #c4b5d4;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .category-filter button:hover, .category-filter button.active {
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            border-color: #a855f7;
+            color: #fff;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .product-card {
+            background: rgba(30, 10, 60, 0.8);
+            border: 1px solid #2d1b69;
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #a855f7;
+            box-shadow: 0 10px 30px rgba(107, 66, 255, 0.2);
+        }
+
+        .product-card .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(90deg, #a855f7, #6366f1);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .product-card .name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .product-card .category {
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .product-card .price {
+            font-size: 22px;
+            font-weight: 700;
+            color: #a855f7;
+            margin-bottom: 10px;
+        }
+
+        .product-card .desc {
+            color: #c4b5d4;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .product-card .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .product-card .actions .btn {
+            flex: 1;
+            padding: 8px;
+            font-size: 12px;
+        }
+
+        /* Login Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #1a0033, #2d1b69);
+            border: 1px solid #7b3fbf;
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 0 50px rgba(107, 66, 255, 0.3);
+        }
+
+        .modal-content h2 {
+            color: #a855f7;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid #3b1f6b;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .modal-content input:focus {
+            outline: none;
+            border-color: #a855f7;
+        }
+
+        .modal-content .btn {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+        }
+
+        .modal-content .error {
+            color: #ef4444;
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        /* Transaction */
+        .transaction-list {
+            background: rgba(30, 10, 60, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #2d1b69;
+        }
+
+        .transaction-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #1a0f33;
+            color: #c4b5d4;
+        }
+
+        .transaction-item:last-child {
+            border-bottom: none;
+        }
+
+        .transaction-item .code {
+            color: #a855f7;
+            font-weight: 600;
+        }
+
+        .transaction-item .status {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+        }
+
+        .status.success {
+            background: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
+        }
+
+        .status.pending {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero .stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .admin-grid {
+                grid-template-columns: 1fr;
+            }
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-info {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a0033;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #7b3fbf;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">
+        SHOPVIP<span>.COM</span>
+    </div>
+    <div class="header-info">
+        <span class="user">👤 nhân viên phúc</span>
+        <button class="btn btn-primary" onclick="showLogin()">🔐 Admin</button>
+        <button class="btn btn-danger">Đăng Xuất</button>
+    </div>
+</header>
+
+<!-- Main -->
+<div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>🎮 GEAR UP • DOMINATE • WIN BIG</h1>
+        <p>Cửa hàng gaming gear cao cấp hàng đầu Việt Nam. Chuột, bàn phím, tai nghe, màn hình — tất cả dành cho chiến thắng của bạn.</p>
+        <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin-top:15px;">
+            <button class="btn btn-primary" onclick="showLogin()">🔓 Tạo tài khoản</button>
+        </div>
+        <div class="stats">
+            <div><div class="num">12K+</div><div class="label">Khách hàng</div></div>
+            <div><div class="num">500+</div><div class="label">Sản phẩm</div></div>
+            <div><div class="num">98%</div><div class="label">Hài lòng</div></div>
+        </div>
+    </section>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <h2>⚙️ Admin Control Panel</h2>
+        <div class="admin-grid">
+            <!-- Thêm sản phẩm -->
+            <div class="admin-card">
+                <h3>➕ Thêm sản phẩm</h3>
+                <input type="text" id="prodName" placeholder="Tên sản phẩm">
+                <input type="text" id="prodCategory" placeholder="Danh mục (VD: Chuột)">
+                <input type="number" id="prodPrice" placeholder="Giá (VNĐ)">
+                <textarea id="prodDesc" rows="2" placeholder="Mô tả ngắn"></textarea>
+                <button class="btn btn-success" onclick="addProduct()">Thêm sản phẩm</button>
+            </div>
+
+            <!-- Tạo Voucher -->
+            <div class="admin-card">
+                <h3>🎫 Tạo Voucher</h3>
+                <input type="text" id="voucherCode" placeholder="Mã voucher (VD: SALE50)">
+                <input type="number" id="voucherDiscount" placeholder="Giảm giá (%)">
+                <button class="btn btn-warning" onclick="createVoucher()">Tạo voucher</button>
+                <div id="voucherResult" style="margin-top:10px;color:#a855f7;font-size:14px;"></div>
+            </div>
+
+            <!-- Quản lý đơn hàng -->
+            <div class="admin-card">
+                <h3>📦 Quản lý đơn hàng</h3>
+                <select id="orderStatus">
+                    <option value="pending">Chờ xử lý</option>
+                    <option value="shipping">Đang giao</option>
+                    <option value="completed">Hoàn thành</option>
+                    <option value="cancelled">Hủy</option>
+                </select>
+                <button class="btn btn-primary" onclick="updateOrder()">Cập nhật đơn hàng</button>
+                <div id="orderResult" style="margin-top:10px;color:#c4b5d4;font-size:13px;"></div>
+            </div>
+
+            <!-- Nạp tiền -->
+            <div class="admin-card">
+                <h3>💰 Nạp tiền</h3>
+                <input type="number" id="depositAmount" placeholder="Số tiền nạp">
+                <button class="btn btn-primary" onclick="deposit()">Tạo mã nạp</button>
+                <div id="depositResult" style="margin-top:10px;color:#a855f7;font-size:14px;word-break:break-all;"></div>
+            </div>
+        </div>
+
+        <!-- Giao dịch -->
+        <div style="margin-top:20px;">
+            <h3 style="color:#c4b5d4;margin-bottom:10px;">📋 Lịch sử giao dịch</h3>
+            <div class="transaction-list" id="transactionList">
+                <div class="transaction-item">
+                    <span><span class="code">#nap-abc123</span> - Nạp 500,000đ</span>
+                    <span class="status success">Thành công</span>
+                </div>
+                <div class="transaction-item">
+                    <span><span class="code">#mua-xyz789</span> - Mua chuột gaming</span>
+                    <span class="status pending">Chờ xử lý</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products -->
+    <div class="products-header">
+        <h2>🔥 Sản phẩm nổi bật</h2>
+        <div class="category-filter">
+            <button class="active" onclick="filterProducts('all')">Tất cả</button>
+            <button onclick="filterProducts('chuột')">Chuột</button>
+            <button onclick="filterProducts('bàn phím')">Bàn phím</button>
+            <button onclick="filterProducts('tai nghe')">Tai nghe</button>
+            <button onclick="filterProducts('màn hình')">Màn hình</button>
+        </div>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+        <!-- Products will be rendered here -->
+    </div>
+
+</div>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <h2>🔐 Admin Login</h2>
+        <input type="password" id="adminPassword" placeholder="Nhập mật khẩu admin">
+        <button class="btn btn-primary" onclick="adminLogin()">Đăng nhập</button>
+        <div class="error" id="loginError"></div>
+        <p style="text-align:center;color:#6b7280;font-size:12px;margin-top:15px;">Chỉ admin mới có quyền truy cập</p>
+    </div>
+</div>
+
+<script>
+// ========== DATA ==========
+let products = [
+    { id: 1, name: 'Razer DeathAdder V3', category: 'chuột', price: 1890000, desc: 'Chuột gaming siêu nhẹ 59g, sensor 30K DPI' },
+    { id: 2, name: 'Logitech G Pro X', category: 'bàn phím', price: 3490000, desc: 'Bàn phím cơ không dây, switch GX' },
+    { id: 3, name: 'SteelSeries Arctis Nova 7', category: 'tai nghe', price: 4290000, desc: 'Tai nghe không dây, âm thanh 360°' },
+    { id: 4, name: 'ASUS ROG Swift 360Hz', category: 'màn hình', price: 12990000, desc: 'Màn hình 24.5" 360Hz, 0.5ms' },
+    { id: 5, name: 'Corsair K100 RGB', category: 'bàn phím', price: 5290000, desc: 'Bàn phím cơ cao cấp, Opti-Mechanical' },
+    { id: 6, name: 'Logitech G502 X', category: 'chuột', price: 2490000, desc: 'Chuột gaming có dây, 25K DPI' },
+];
+
+let transactions = [
+    { code: 'nap-abc123', amount: 500000, status: 'success', type: 'nạp' },
+    { code: 'mua-xyz789', amount: 1890000, status: 'pending', type: 'mua' },
+];
+
+let vouchers = [];
+let nextId = 7;
+let isAdmin = false;
+
+// ========== RENDER ==========
+function renderProducts(filter = 'all') {
+    const grid = document.getElementById('productGrid');
+    const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+    
+    if (filtered.length === 0) {
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:#6b7280;padding:40px;">Không có sản phẩm nào</div>`;
+        return;
+    }
+
+    grid.innerHTML = filtered.map(p => `
+        <div class="product-card" onclick="showProductDetail(${p.id})">
+            <div class="badge">${p.category.toUpperCase()}</div>
+            <div class="name">${p.name}</div>
+            <div class="category">📂 ${p.category}</div>
+            <div class="price">${p.price.toLocaleString()}đ</div>
+            <div class="desc">${p.desc}</div>
+            ${isAdmin ? `
+            <div class="actions">
+                <button class="btn btn-warning" onclick="event.stopPropagation();editProduct(${p.id})">✏️ Sửa</button>
+                <button class="btn btn-danger" onclick="event.stopPropagation();deleteProduct(${p.id})">🗑️ Xóa</button>
+            </div>` : ''}
+        </div>
+    `).join('');
+}
+
+function showProductDetail(id) {
+    const p = products.find(pr => pr.id === id);
+    if (!p) return;
+    alert(`📦 ${p.name}\n📂 ${p.category}\n💰 ${p.price.toLocaleString()}đ\n📝 ${p.desc}`);
+}
+
+// ========== ADMIN FUNCTIONS ==========
+function showLogin() {
+    document.getElementById('loginModal').classList.add('active');
+    document.getElementById('adminPassword').value = '';
+    document.getElementById('loginError').textContent = '';
+}
+
+function adminLogin() {
+    const pass = document.getElementById('adminPassword').value;
+    // Mật khẩu admin: admin123 (bạn có thể đổi)
+    if (pass === 'admin123') {
+        isAdmin = true;
+        document.getElementById('loginModal').classList.remove('active');
+        document.getElementById('adminPanel').classList.add('active');
+        renderProducts();
+        alert('✅ Đăng nhập admin thành công!');
+    } else {
+        document.getElementById('loginError').textContent = '❌ Mật khẩu không đúng!';
+    }
+}
+
+// Thêm sản phẩm
+function addProduct() {
+    if (!isAdmin) return alert('⚠️ Vui lòng đăng nhập admin!');
+    const name = document.getElementById('prodName').value.trim();
+    const category = document.getElementById('prodCategory').value.trim();
+    const price = parseInt(document.getElementById('prodPrice').value);
+    const desc = document.getElementById('prodDesc').value.trim();
+
+    if (!name || !category || isNaN(price) || !desc) {
+        return alert('⚠️ Vui lòng điền đầy đủ thông tin!');
+    }
+
+    products.push({ id: nextId++, name, category, price, desc });
+    renderProducts();
+    document.getElementById('prodName').value = '';
+    document.getElementById('prodCategory').value = '';
+    document.getElementById('prodPrice').value = '';
+    document.getElementById('prodDesc').value = '';
+    alert('✅ Đã thêm sản phẩm thành công!');
+}
+
+// Sửa sản phẩm
+function editProduct(id) {
+    if (!isAdmin) return;
+    const p = products.find(pr => pr.id === id);
+    if (!p) return;
+    const newName = prompt('Tên sản phẩm:', p.name);
+    if (newName) p.name = newName;
+    const newPrice = prompt('Giá (VNĐ):', p.price);
+    if (newPrice) p.price = parseInt(newPrice);
+    const newDesc = prompt('Mô tả:', p.desc);
+    if (newDesc) p.desc = newDesc;
+    renderProducts();
+}
+
+// Xóa sản phẩm
+function deleteProduct(id) {
+    if (!isAdmin) return;
+    if (confirm('Bạn có chắc muốn xóa sản phẩm này?')) {
+        products = products.filter(p => p.id !== id);
+        renderProducts();
+        alert('✅ Đã xóa sản phẩm!');
+    }
+}
+
+// Tạo voucher
+function createVoucher() {
+    if (!isAdmin) return alert('⚠️ Vui lòng đăng nhập admin!');
+    const code = document.getElementById('voucherCode').value.trim();
+    const discount = parseInt(document.getElementById('voucherDiscount').value);
+    if (!code || isNaN(discount) || discount < 0 || discount > 100) {
+        return alert('⚠️ Vui lòng nhập mã và % giảm giá hợp lệ (0-100)');
+    }
+    const voucher = { code, discount, created: new Date().toLocaleString() };
+    vouchers.push(voucher);
+    document.getElementById('voucherResult').innerHTML = `✅ Voucher <strong>${code}</strong> - Giảm ${discount}% đã được tạo!`;
+    document.getElementById('voucherCode').value = '';
+    document.getElementById('voucherDiscount').value = '';
+}
+
+// Nạp tiền
+function deposit() {
+    if (!isAdmin) return alert('⚠️ Vui lòng đăng nhập admin!');
+    const amount = parseInt(document.getElementById('depositAmount').value);
+    if (isNaN(amount) || amount <= 0) {
+        return alert('⚠️ Vui lòng nhập số tiền hợp lệ!');
+    }
+    const code = `nap-${Date.now().toString(36)}-${Math.random().toString(36).substr(2,5)}`;
+    const resultDiv = document.getElementById('depositResult');
+    resultDiv.innerHTML = `
+        💳 Mã nạp: <strong style="color:#22c55e;">${code}</strong><br>
+        💰 Số tiền: ${amount.toLocaleString()}đ<br>
+        📋 Nội dung CK: NAP ${code}
+    `;
+    transactions.unshift({ code, amount, status: 'pending', type: 'nạp' });
+    updateTransactionList();
+    document.getElementById('depositAmount').value = '';
+}
+
+// Cập nhật đơn hàng
+function updateOrder() {
+    if (!isAdmin) return alert('⚠️ Vui lòng đăng nhập admin!');
+    const status = document.getElementById('orderStatus').value;
+    document.getElementById('orderResult').textContent = `✅ Đã cập nhật trạng thái đơn hàng thành: ${status}`;
+}
+
+// Cập nhật danh sách giao dịch
+function updateTransactionList() {
+    const list = document.getElementById('transactionList');
+    list.innerHTML = transactions.map(t => `
+        <div class="transaction-item">
+            <span><span class="code">#${t.code}</span> - ${t.type === 'nạp' ? '💰 Nạp' : '🛒 Mua'} ${t.amount ? t.amount.toLocaleString()+'đ' : ''}</span>
+            <span class="status ${t.status}">${t.status === 'success' ? '✅ Thành công' : t.status === 'pending' ? '⏳ Chờ xử lý' : t.status}</span>
+        </div>
+    `).join('');
+}
+
+// Lọc sản phẩm
+function filterProducts(category) {
+    document.querySelectorAll('.category-filter button').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    renderProducts(category);
+}
+
+// ========== INIT ==========
+renderProducts();
+updateTransactionList();
+
+// Đóng modal khi click ra ngoài
+document.getElementById('loginModal').addEventListener('click', function(e) {
+    if (e.target === this) this.classList.remove('active');
+});
+
+// Admin mặc định đã đăng nhập? (tắt đi, bật lên để test nhanh)
+// isAdmin = true; // Bỏ comment nếu muốn luôn hiện admin
+// document.getElementById('adminPanel').classList.add('active');
+</script>
+</body>
+      </html>

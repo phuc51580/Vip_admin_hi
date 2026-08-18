@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOPVIP - Gaming Gear</title>
+    <title>SHOPVIP.COM - Gaming Gear</title>
     <style>
         * {
             margin: 0;
@@ -18,15 +18,14 @@
             min-height: 100vh;
         }
 
-        /* Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #0a0a1a; }
         ::-webkit-scrollbar-thumb { background: #7c3aed; border-radius: 10px; }
 
         /* HEADER */
         .header {
-            background: linear-gradient(135deg, #0f0f2a, #1a1a3e);
-            padding: 12px 30px;
+            background: #0f0f2a;
+            padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -39,204 +38,215 @@
         }
 
         .logo {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: 900;
-            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -0.5px;
+            color: #fff;
+        }
+        .logo span {
+            color: #8b5cf6;
         }
         .logo small {
             font-size: 12px;
-            -webkit-text-fill-color: #6b7280;
-            background: none;
+            color: #6b7280;
             font-weight: 400;
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
-        .header-right .user-info {
+        .user-info {
             color: #9ca3af;
-            font-size: 14px;
+            font-size: 13px;
             background: rgba(124, 58, 237, 0.15);
             padding: 6px 16px;
-            border-radius: 20px;
+            border-radius: 6px;
             border: 1px solid rgba(124, 58, 237, 0.3);
         }
 
+        .balance {
+            color: #22c55e;
+            font-weight: 700;
+            background: rgba(34, 197, 94, 0.1);
+            padding: 6px 16px;
+            border-radius: 6px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            font-size: 13px;
+        }
+
         .btn {
-            padding: 8px 22px;
+            padding: 8px 24px;
             border: none;
-            border-radius: 25px;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 600;
             font-size: 13px;
             transition: all 0.3s;
         }
-        .btn:hover { transform: translateY(-2px); }
+        .btn:hover { opacity: 0.85; }
 
         .btn-primary {
             background: linear-gradient(90deg, #8b5cf6, #6366f1);
             color: #fff;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
         }
-        .btn-primary:hover { box-shadow: 0 6px 25px rgba(99, 102, 241, 0.5); }
-
         .btn-outline {
             background: transparent;
             color: #8b5cf6;
             border: 1px solid #8b5cf6;
         }
-        .btn-outline:hover { background: rgba(139, 92, 246, 0.1); }
-
         .btn-danger {
-            background: linear-gradient(90deg, #ef4444, #dc2626);
+            background: #ef4444;
             color: #fff;
         }
         .btn-success {
-            background: linear-gradient(90deg, #22c55e, #16a34a);
+            background: #22c55e;
             color: #fff;
         }
         .btn-warning {
-            background: linear-gradient(90deg, #f59e0b, #d97706);
+            background: #f59e0b;
             color: #fff;
         }
         .btn-purple {
-            background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+            background: #8b5cf6;
             color: #fff;
         }
-
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 60px 20px 40px;
-            background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.08), transparent 70%);
-        }
-        .hero h1 {
-            font-size: 44px;
-            background: linear-gradient(90deg, #8b5cf6, #3b82f6, #8b5cf6);
-            background-size: 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shimmer 3s infinite;
-        }
-        @keyframes shimmer {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        .hero p {
-            color: #9ca3af;
-            font-size: 17px;
-            max-width: 600px;
-            margin: 12px auto 25px;
-        }
-        .hero .btn-group { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-        .stats .num {
-            font-size: 30px;
-            font-weight: 700;
-            color: #8b5cf6;
-        }
-        .stats .label {
-            font-size: 14px;
-            color: #6b7280;
+        .btn-sm {
+            padding: 4px 12px;
+            font-size: 12px;
         }
 
-        /* CONTAINER */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px 40px;
         }
 
-        /* CATEGORY FILTER */
-        .filter-bar {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin: 25px 0 20px;
-            justify-content: center;
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 40px 20px 30px;
+            border-bottom: 1px solid #1a1a3e;
+            margin-bottom: 20px;
         }
-        .filter-bar button {
-            padding: 8px 22px;
+        .hero h1 {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .hero h1 span {
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            color: #9ca3af;
+            font-size: 15px;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+        .hero .btn-group {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        .stats .num {
+            font-size: 26px;
+            font-weight: 700;
+            color: #8b5cf6;
+        }
+        .stats .label {
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        /* CATEGORY */
+        .category-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin: 15px 0 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #1a1a3e;
+        }
+        .category-bar .cat-label {
+            color: #6b7280;
+            font-size: 13px;
+            margin-right: 10px;
+            line-height: 34px;
+        }
+        .category-bar button {
+            padding: 6px 20px;
             border: 1px solid #2d2d5e;
-            border-radius: 25px;
+            border-radius: 6px;
             background: transparent;
             color: #9ca3af;
             cursor: pointer;
             transition: 0.3s;
-            font-size: 14px;
+            font-size: 13px;
         }
-        .filter-bar button:hover,
-        .filter-bar button.active {
-            background: linear-gradient(90deg, #8b5cf6, #6366f1);
+        .category-bar button:hover,
+        .category-bar button.active {
+            background: #8b5cf6;
             border-color: #8b5cf6;
             color: #fff;
         }
 
         /* PRODUCT GRID */
         .section-title {
-            font-size: 24px;
+            font-size: 20px;
             color: #e5e7eb;
-            margin: 30px 0 15px;
-            border-left: 4px solid #8b5cf6;
-            padding-left: 15px;
+            margin: 20px 0 15px;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 16px;
         }
 
         .product-card {
-            background: linear-gradient(145deg, #12122a, #1a1a3e);
+            background: #12122a;
             border: 1px solid #2d2d5e;
-            border-radius: 16px;
-            padding: 20px;
+            border-radius: 8px;
+            padding: 18px;
             transition: all 0.3s;
-            cursor: pointer;
-            position: relative;
         }
         .product-card:hover {
-            transform: translateY(-6px);
             border-color: #8b5cf6;
-            box-shadow: 0 12px 40px rgba(139, 92, 246, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(139, 92, 246, 0.1);
         }
         .product-card .badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: linear-gradient(90deg, #8b5cf6, #6366f1);
-            padding: 3px 14px;
-            border-radius: 12px;
+            display: inline-block;
+            background: #8b5cf6;
+            padding: 2px 12px;
+            border-radius: 4px;
             font-size: 11px;
             font-weight: 600;
             text-transform: uppercase;
+            margin-bottom: 6px;
         }
         .product-card .name {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 4px;
         }
         .product-card .cat {
             color: #6b7280;
             font-size: 13px;
-            margin-bottom: 8px;
+            margin: 2px 0 6px;
         }
         .product-card .price {
             font-size: 20px;
@@ -246,135 +256,167 @@
         .product-card .desc {
             color: #9ca3af;
             font-size: 13px;
-            line-height: 1.5;
-            margin: 8px 0 12px;
+            line-height: 1.4;
+            margin: 6px 0 10px;
+        }
+        .product-card .stock {
+            font-size: 12px;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+        .product-card .btn {
+            width: 100%;
+            padding: 8px;
+            font-size: 13px;
         }
         .product-card .admin-actions {
             display: flex;
-            gap: 8px;
-            margin-top: 10px;
+            gap: 6px;
+            margin-top: 8px;
+            flex-wrap: wrap;
         }
         .product-card .admin-actions .btn {
             flex: 1;
-            padding: 6px;
-            font-size: 12px;
-            text-align: center;
+            min-width: 50px;
+            padding: 4px 8px;
+            font-size: 11px;
+        }
+
+        /* MY KEYS */
+        .my-keys {
+            background: #12122a;
+            border: 1px solid #2d2d5e;
+            border-radius: 8px;
+            padding: 18px;
+            margin-top: 20px;
+        }
+        .my-keys h3 {
+            color: #e5e7eb;
+            font-size: 17px;
+            margin-bottom: 12px;
+        }
+        .key-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 14px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            margin: 4px 0;
+            border-left: 3px solid #22c55e;
+            flex-wrap: wrap;
+            gap: 6px;
+            font-size: 14px;
+        }
+        .key-item .key-code {
+            color: #8b5cf6;
+            font-weight: 700;
+            font-family: monospace;
+            letter-spacing: 0.5px;
+        }
+        .key-item .key-info {
+            color: #9ca3af;
+            font-size: 13px;
         }
 
         /* ADMIN PANEL */
         .admin-panel {
             display: none;
-            background: linear-gradient(145deg, #0f0f2a, #1a1a3e);
+            background: #12122a;
             border: 1px solid #2d2d5e;
-            border-radius: 16px;
-            padding: 25px;
-            margin-top: 30px;
-            box-shadow: 0 0 50px rgba(139, 92, 246, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 25px;
         }
         .admin-panel.active { display: block; }
         .admin-panel h2 {
             color: #8b5cf6;
-            margin-bottom: 20px;
-            font-size: 22px;
+            font-size: 20px;
             border-bottom: 1px solid #2d2d5e;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
+            margin-bottom: 18px;
         }
 
         .admin-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 16px;
         }
         .admin-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid #2d2d5e;
-            border-radius: 12px;
-            padding: 18px;
+            border-radius: 8px;
+            padding: 16px;
         }
         .admin-card h3 {
             color: #c4b5d4;
-            font-size: 15px;
-            margin-bottom: 12px;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
         .admin-card input,
         .admin-card textarea,
         .admin-card select {
             width: 100%;
-            padding: 10px 12px;
-            margin: 5px 0;
+            padding: 8px 12px;
+            margin: 4px 0;
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid #2d2d5e;
-            border-radius: 8px;
+            border-radius: 6px;
             color: #fff;
-            font-size: 14px;
+            font-size: 13px;
         }
         .admin-card input:focus,
         .admin-card textarea:focus {
             outline: none;
             border-color: #8b5cf6;
         }
-        .admin-card .btn { width: 100%; margin-top: 6px; }
-
+        .admin-card .btn { width: 100%; margin-top: 4px; }
         .admin-card .result {
-            margin-top: 10px;
+            margin-top: 6px;
             color: #8b5cf6;
             font-size: 13px;
-            word-break: break-all;
         }
 
-        /* TRANSACTION LIST */
         .transaction-list {
-            margin-top: 15px;
+            margin-top: 8px;
             background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            padding: 10px 15px;
-            max-height: 300px;
+            border-radius: 6px;
+            padding: 6px 12px;
+            max-height: 200px;
             overflow-y: auto;
         }
         .transaction-item {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            padding: 6px 0;
             border-bottom: 1px solid #1a1a3e;
             color: #c4b5d4;
-            font-size: 14px;
+            font-size: 13px;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 4px;
         }
         .transaction-item:last-child { border-bottom: none; }
         .transaction-item .code { color: #8b5cf6; font-weight: 600; }
         .transaction-item .status {
-            padding: 2px 14px;
-            border-radius: 12px;
-            font-size: 12px;
+            padding: 1px 12px;
+            border-radius: 4px;
+            font-size: 11px;
         }
-        .status.pending {
-            background: rgba(245, 158, 11, 0.15);
-            color: #f59e0b;
-        }
-        .status.completed {
-            background: rgba(34, 197, 94, 0.15);
-            color: #22c55e;
-        }
-        .status.cancelled {
-            background: rgba(239, 68, 68, 0.15);
-            color: #ef4444;
-        }
-        .status.waiting {
-            background: rgba(99, 102, 241, 0.15);
-            color: #818cf8;
-        }
+        .status.pending { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+        .status.completed { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+        .status.cancelled { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .status.waiting { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
+        .status.sold { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
 
         .admin-actions-small {
             display: flex;
-            gap: 6px;
+            gap: 4px;
         }
         .admin-actions-small .btn {
-            padding: 2px 12px;
+            padding: 1px 10px;
             font-size: 11px;
         }
 
-        /* MODAL LOGIN */
+        /* MODAL */
         .modal {
             display: none;
             position: fixed;
@@ -386,133 +428,139 @@
             z-index: 999;
             justify-content: center;
             align-items: center;
-            backdrop-filter: blur(8px);
         }
         .modal.active { display: flex; }
         .modal-content {
-            background: linear-gradient(145deg, #12122a, #1a1a3e);
+            background: #12122a;
             border: 1px solid #2d2d5e;
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 8px;
+            padding: 30px;
             width: 90%;
-            max-width: 400px;
-            box-shadow: 0 0 60px rgba(139, 92, 246, 0.15);
+            max-width: 380px;
         }
         .modal-content h2 {
             color: #8b5cf6;
             text-align: center;
-            margin-bottom: 8px;
+            font-size: 22px;
         }
         .modal-content .sub {
             text-align: center;
             color: #6b7280;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin: 4px 0 18px;
         }
         .modal-content input {
             width: 100%;
-            padding: 12px 14px;
-            margin: 6px 0;
+            padding: 10px 14px;
+            margin: 4px 0;
             background: rgba(0, 0, 0, 0.3);
             border: 1px solid #2d2d5e;
-            border-radius: 10px;
+            border-radius: 6px;
             color: #fff;
-            font-size: 15px;
+            font-size: 14px;
         }
         .modal-content input:focus {
             outline: none;
             border-color: #8b5cf6;
         }
-        .modal-content .btn {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-        }
+        .modal-content .btn { width: 100%; padding: 10px; margin-top: 6px; }
         .modal-content .switch {
             text-align: center;
             color: #6b7280;
             font-size: 13px;
-            margin-top: 14px;
+            margin-top: 12px;
         }
         .modal-content .switch a {
             color: #8b5cf6;
             cursor: pointer;
-            text-decoration: none;
         }
-        .modal-content .switch a:hover { text-decoration: underline; }
-        .modal-content .error {
-            color: #ef4444;
-            text-align: center;
-            font-size: 13px;
-            margin-top: 10px;
+        .modal-content .error { color: #ef4444; text-align: center; font-size: 13px; margin-top: 8px; }
+        .modal-content .success { color: #22c55e; text-align: center; font-size: 13px; margin-top: 8px; }
+
+        .toggle-group {
+            display: flex;
+            gap: 8px;
+            margin: 6px 0;
         }
-        .modal-content .success {
-            color: #22c55e;
-            text-align: center;
+        .toggle-group label {
+            color: #9ca3af;
             font-size: 13px;
-            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+        }
+        .toggle-group input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #8b5cf6;
+            cursor: pointer;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .header { padding: 10px 16px; }
             .logo { font-size: 20px; }
-            .hero h1 { font-size: 28px; }
-            .hero .btn-group .btn { padding: 8px 16px; font-size: 12px; }
-            .stats { gap: 20px; }
-            .stats .num { font-size: 22px; }
+            .hero h1 { font-size: 24px; }
             .product-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
             .admin-grid { grid-template-columns: 1fr; }
-            .modal-content { padding: 25px; }
+            .stats { gap: 20px; }
+            .modal-content { padding: 20px; }
         }
         @media (max-width: 480px) {
             .product-grid { grid-template-columns: 1fr; }
-            .header-right .user-info { font-size: 12px; padding: 4px 12px; }
+            .header-right .user-info { font-size: 12px; padding: 4px 10px; }
+            .category-bar .cat-label { display: none; }
+            .category-bar button { padding: 4px 12px; font-size: 12px; }
         }
 
         .flash-sale {
             background: linear-gradient(90deg, #7c3aed, #4f46e5);
-            padding: 10px 20px;
-            border-radius: 12px;
+            padding: 8px 16px;
+            border-radius: 6px;
             text-align: center;
-            margin: 20px 0;
+            margin: 10px 0;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 14px;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
         }
-        .flash-sale span { background: #ef4444; padding: 2px 14px; border-radius: 8px; }
-        .flash-sale .discount { font-size: 20px; }
+        .flash-sale .discount {
+            background: #ef4444;
+            padding: 2px 12px;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
 
 <!-- HEADER -->
 <header class="header">
-    <div class="logo">SHOPVIP <small>.com</small></div>
+    <div class="logo">SHOPVIP<span>.COM</span> <small>– Gaming Gear</small></div>
     <div class="header-right">
         <span class="user-info" id="userDisplay">👤 Khách</span>
-        <button class="btn btn-primary" id="loginBtn" onclick="openLogin()">🔐 Đăng nhập</button>
-        <button class="btn btn-outline" id="registerBtn" onclick="openRegister()">📝 Đăng ký</button>
-        <button class="btn btn-danger" id="logoutBtn" style="display:none;" onclick="logout()">🚪 Đăng xuất</button>
+        <span class="balance" id="balanceDisplay" style="display:none;">💰 0đ</span>
+        <button class="btn btn-primary" id="loginBtn" onclick="openLogin()">Đăng nhập</button>
+        <button class="btn btn-outline" id="registerBtn" onclick="openRegister()">Đăng ký</button>
+        <button class="btn btn-danger" id="logoutBtn" style="display:none;" onclick="logout()">Đăng xuất</button>
+        <button class="btn btn-warning" id="depositBtn" style="display:none;" onclick="userDeposit()">💰 Nạp</button>
     </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
-    <h1>⚡ GEAR UP • DOMINATE • WIN BIG</h1>
+    <h1><span>GEAR UP</span> DOMINATE WIN BIG</h1>
     <p>Cửa hàng gaming gear cao cấp hàng đầu Việt Nam. Chuột, bàn phím, tai nghe, màn hình — tất cả dành cho chiến thắng của bạn.</p>
     <div class="btn-group">
-        <button class="btn btn-primary" onclick="openLogin()">🛒 MUA NGAY</button>
-        <button class="btn btn-outline" onclick="openRegister()">📝 TẠO TÀI KHOẢN</button>
+        <button class="btn btn-primary" onclick="openLogin()">MUA NGAY</button>
+        <button class="btn btn-outline" onclick="openRegister()">TẠO TÀI KHOẢN</button>
     </div>
     <div class="stats">
-        <div><div class="num">12K+</div><div class="label">Khách hàng</div></div>
-        <div><div class="num">500+</div><div class="label">Sản phẩm</div></div>
-        <div><div class="num">98%</div><div class="label">Hài lòng</div></div>
+        <div><div class="num">12K+</div><div class="label">KHÁCH HÀNG</div></div>
+        <div><div class="num">500+</div><div class="label">SẢN PHẨM</div></div>
+        <div><div class="num">98%</div><div class="label">HÀI LÒNG</div></div>
     </div>
 </section>
 
@@ -525,19 +573,25 @@
         <span>⏰ 24:00</span>
     </div>
 
-    <!-- CATEGORY FILTER -->
-    <div class="filter-bar">
-        <button class="active" onclick="filterProducts('all', this)">📦 Tất cả</button>
-        <button onclick="filterProducts('chuột', this)">🖱️ Chuột</button>
-        <button onclick="filterProducts('bàn phím', this)">⌨️ Bàn phím</button>
-        <button onclick="filterProducts('tai nghe', this)">🎧 Tai nghe</button>
-        <button onclick="filterProducts('màn hình', this)">🖥️ Màn hình</button>
-        <button onclick="filterProducts('bộ kit', this)">🎮 Bộ Kit</button>
+    <!-- CATEGORY -->
+    <div class="category-bar">
+        <span class="cat-label">// DANH MỤC</span>
+        <button class="active" onclick="filterProducts('all', this)">Tất Cả</button>
+        <button onclick="filterProducts('chuột', this)">Chuột</button>
+        <button onclick="filterProducts('bàn phím', this)">Bàn Phím</button>
+        <button onclick="filterProducts('tai nghe', this)">Tai Nghe</button>
+        <button onclick="filterProducts('màn hình', this)">Màn Hình</button>
     </div>
 
     <!-- PRODUCTS -->
     <h2 class="section-title">🔥 Sản phẩm nổi bật</h2>
     <div class="product-grid" id="productGrid"></div>
+
+    <!-- MY KEYS -->
+    <div class="my-keys" id="myKeysSection" style="display:none;">
+        <h3>🔑 Kho key của bạn</h3>
+        <div id="myKeysList"></div>
+    </div>
 
     <!-- ADMIN PANEL -->
     <div class="admin-panel" id="adminPanel">
@@ -548,54 +602,64 @@
             <div class="admin-card">
                 <h3>➕ Thêm sản phẩm</h3>
                 <input type="text" id="prodName" placeholder="Tên sản phẩm">
-                <input type="text" id="prodCategory" placeholder="Danh mục (chuột, bàn phím...)">
+                <input type="text" id="prodCategory" placeholder="Danh mục">
                 <input type="number" id="prodPrice" placeholder="Giá (VNĐ)">
-                <textarea id="prodDesc" rows="2" placeholder="Mô tả ngắn"></textarea>
-                <button class="btn btn-success" onclick="addProduct()">Thêm sản phẩm</button>
+                <textarea id="prodDesc" rows="2" placeholder="Mô tả"></textarea>
+                <button class="btn btn-success" onclick="addProduct()">Thêm</button>
                 <div id="addResult" class="result"></div>
             </div>
 
-            <!-- Quản lý đơn hàng -->
+            <!-- Quản lý kho key -->
             <div class="admin-card">
-                <h3>📦 Duyệt đơn hàng</h3>
-                <div id="orderList" class="transaction-list" style="max-height:200px;">
-                    <div style="color:#6b7280;text-align:center;padding:10px;">Chưa có đơn hàng mới</div>
+                <h3>🔑 Quản lý kho key</h3>
+                <select id="keyProductSelect"></select>
+                <textarea id="keyListInput" rows="3" placeholder="Nhập key, mỗi key 1 dòng"></textarea>
+                <button class="btn btn-primary" onclick="addKeys()">➕ Thêm key</button>
+                <div id="keyResult" class="result"></div>
+                <button class="btn btn-outline btn-sm" onclick="viewKeyStock()" style="margin-top:4px;">📊 Xem kho</button>
+                <div id="keyStockView" style="margin-top:4px;max-height:100px;overflow-y:auto;font-size:12px;color:#9ca3af;"></div>
+            </div>
+
+            <!-- Quản lý đơn hàng + Cài đặt -->
+            <div class="admin-card">
+                <h3>📦 Quản lý đơn hàng</h3>
+                <div class="toggle-group">
+                    <label><input type="checkbox" id="autoDelivery" checked> Tự động giao key</label>
                 </div>
+                <div id="orderList" class="transaction-list" style="max-height:150px;"></div>
             </div>
 
             <!-- Nạp tiền -->
             <div class="admin-card">
-                <h3>💰 Nạp tiền (chờ duyệt)</h3>
-                <div id="depositList" class="transaction-list" style="max-height:200px;">
-                    <div style="color:#6b7280;text-align:center;padding:10px;">Chưa có yêu cầu nạp</div>
-                </div>
+                <h3>💰 Duyệt nạp tiền</h3>
+                <div id="depositList" class="transaction-list" style="max-height:150px;"></div>
             </div>
 
-            <!-- Tạo voucher -->
+            <!-- Quản lý giá -->
             <div class="admin-card">
-                <h3>🎫 Tạo Voucher</h3>
-                <input type="text" id="voucherCode" placeholder="Mã voucher (VD: SALE50)">
-                <input type="number" id="voucherDiscount" placeholder="Giảm giá (%)">
-                <button class="btn btn-warning" onclick="createVoucher()">Tạo voucher</button>
-                <div id="voucherResult" class="result"></div>
+                <h3>💵 Đổi giá sản phẩm</h3>
+                <select id="priceProductSelect"></select>
+                <input type="number" id="newPrice" placeholder="Giá mới">
+                <button class="btn btn-warning" onclick="updatePrice()">Cập nhật</button>
+                <div id="priceResult" class="result"></div>
             </div>
 
         </div>
 
-        <!-- Giao dịch tổng hợp -->
-        <div style="margin-top:20px;">
-            <h3 style="color:#c4b5d4;margin-bottom:10px;">📋 Lịch sử giao dịch</h3>
-            <div class="transaction-list" id="transactionList"></div>
+        <!-- Giao dịch -->
+        <div style="margin-top:16px;">
+            <h3 style="color:#c4b5d4;font-size:15px;margin-bottom:8px;">📋 Lịch sử giao dịch</h3>
+            <div class="transaction-list" id="transactionList" style="max-height:200px;"></div>
         </div>
     </div>
 
 </div>
 
-<!-- LOGIN / REGISTER MODAL -->
+<!-- AUTH MODAL -->
 <div class="modal" id="authModal">
     <div class="modal-content">
-        <h2 id="authTitle">🔐 Đăng nhập</h2>
-        <div class="sub" id="authSub">Đăng nhập để quản lý tài khoản</div>
+        <h2 id="authTitle">Đăng nhập</h2>
+        <div class="sub" id="authSub">Đăng nhập để mua sắm</div>
         <input type="text" id="authUsername" placeholder="Tên đăng nhập">
         <input type="password" id="authPassword" placeholder="Mật khẩu">
         <button class="btn btn-primary" id="authBtn" onclick="handleAuth()">Đăng nhập</button>
@@ -609,43 +673,34 @@
 <script>
 // ==================== DATA ====================
 let products = [
-    { id: 1, name: 'Razer DeathAdder V3', category: 'chuột', price: 1890000, desc: 'Chuột gaming siêu nhẹ 59g, sensor 30K DPI' },
-    { id: 2, name: 'Logitech G Pro X', category: 'bàn phím', price: 3490000, desc: 'Bàn phím cơ không dây, switch GX' },
-    { id: 3, name: 'SteelSeries Arctis Nova 7', category: 'tai nghe', price: 4290000, desc: 'Tai nghe không dây, âm thanh 360°' },
-    { id: 4, name: 'ASUS ROG Swift 360Hz', category: 'màn hình', price: 12990000, desc: 'Màn hình 24.5" 360Hz, 0.5ms' },
-    { id: 5, name: 'Corsair K100 RGB', category: 'bàn phím', price: 5290000, desc: 'Bàn phím cơ cao cấp, Opti-Mechanical' },
-    { id: 6, name: 'Logitech G502 X', category: 'chuột', price: 2490000, desc: 'Chuột gaming có dây, 25K DPI' },
-    { id: 7, name: 'HyperX Cloud II', category: 'tai nghe', price: 2590000, desc: 'Tai nghe gaming 7.1 âm thanh sống động' },
+    { id: 1, name: 'Razer DeathAdder V3', category: 'chuột', price: 1890000, desc: 'Chuột gaming siêu nhẹ 59g' },
+    { id: 2, name: 'Logitech G Pro X', category: 'bàn phím', price: 3490000, desc: 'Bàn phím cơ không dây' },
+    { id: 3, name: 'SteelSeries Arctis Nova 7', category: 'tai nghe', price: 4290000, desc: 'Tai nghe không dây 360°' },
+    { id: 4, name: 'ASUS ROG Swift 360Hz', category: 'màn hình', price: 12990000, desc: 'Màn hình 24.5" 360Hz' },
+    { id: 5, name: 'Corsair K100 RGB', category: 'bàn phím', price: 5290000, desc: 'Bàn phím cơ cao cấp' },
+    { id: 6, name: 'Logitech G502 X', category: 'chuột', price: 2490000, desc: 'Chuột gaming có dây' },
 ];
 
-let orders = [
-    { id: 1, product: 'Razer DeathAdder V3', customer: 'user1', amount: 1890000, status: 'pending', date: '2026-08-18 14:30' },
-    { id: 2, product: 'Logitech G Pro X', customer: 'user2', amount: 3490000, status: 'pending', date: '2026-08-18 15:20' },
+let keyStock = [
+    { id: 1, productId: 1, key: 'KEY-RAZER-001', status: 'available', buyer: null },
+    { id: 2, productId: 1, key: 'KEY-RAZER-002', status: 'available', buyer: null },
+    { id: 3, productId: 2, key: 'KEY-LOGI-001', status: 'available', buyer: null },
+    { id: 4, productId: 4, key: 'KEY-ASUS-001', status: 'available', buyer: null },
 ];
 
-let deposits = [
-    { id: 1, code: 'nap-hi-8k2m9', amount: 500000, status: 'waiting', date: '2026-08-18 16:00' },
-    { id: 2, code: 'nap-hi-7x4n1', amount: 1000000, status: 'waiting', date: '2026-08-18 17:30' },
-];
-
-let transactions = [
-    { code: 'nap-hi-8k2m9', amount: 500000, status: 'pending', type: 'nạp', date: '2026-08-18 16:00' },
-    { code: 'nap-hi-7x4n1', amount: 1000000, status: 'pending', type: 'nạp', date: '2026-08-18 17:30' },
-    { code: 'mua-xyz789', amount: 1890000, status: 'completed', type: 'mua', date: '2026-08-17 10:00' },
-];
-
+let orders = [];
+let deposits = [];
+let transactions = [];
 let users = [
-    { username: 'admin', password: 'phc51580', role: 'admin' },
-    { username: 'user1', password: '123456', role: 'user' },
+    { username: 'admin', password: 'phc51580', role: 'admin', balance: 0 },
 ];
-
-let vouchers = [];
-let nextId = 8;
-let nextOrderId = 3;
-let nextDepositId = 3;
 let currentUser = null;
 let isAdmin = false;
-let authMode = 'login'; // 'login' or 'register'
+let authMode = 'login';
+let nextId = 7;
+let nextKeyId = 5;
+let nextOrderId = 1;
+let nextDepositId = 1;
 
 // ==================== RENDER ====================
 function renderProducts(filter = 'all') {
@@ -653,38 +708,37 @@ function renderProducts(filter = 'all') {
     const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
     
     if (filtered.length === 0) {
-        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:#6b7280;padding:40px;">Không có sản phẩm nào</div>`;
+        grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;color:#6b7280;padding:30px;">Không có sản phẩm</div>`;
         return;
     }
 
-    grid.innerHTML = filtered.map(p => `
-        <div class="product-card" onclick="showDetail(${p.id})">
+    grid.innerHTML = filtered.map(p => {
+        const available = keyStock.filter(k => k.productId === p.id && k.status === 'available').length;
+        return `
+        <div class="product-card">
             <div class="badge">${p.category}</div>
             <div class="name">${p.name}</div>
             <div class="cat">📂 ${p.category}</div>
             <div class="price">${p.price.toLocaleString()}đ</div>
             <div class="desc">${p.desc}</div>
-            ${isAdmin ? `
-            <div class="admin-actions" onclick="event.stopPropagation();">
-                <button class="btn btn-warning" onclick="editProduct(${p.id})">✏️ Sửa</button>
-                <button class="btn btn-danger" onclick="deleteProduct(${p.id})">🗑️ Xóa</button>
-            </div>` : ''}
+            <div class="stock">🔑 Còn ${available} key</div>
             ${currentUser && !isAdmin ? `
-            <div class="admin-actions" onclick="event.stopPropagation();">
-                <button class="btn btn-primary" onclick="buyNow(${p.id})">🛒 Mua ngay</button>
+                <button class="btn btn-primary" onclick="buyProduct(${p.id})" ${available === 0 ? 'disabled style="opacity:0.5;"' : ''}>
+                    🛒 Mua ngay
+                </button>
+            ` : ''}
+            ${isAdmin ? `
+            <div class="admin-actions">
+                <button class="btn btn-warning btn-sm" onclick="editProduct(${p.id})">✏️</button>
+                <button class="btn btn-danger btn-sm" onclick="deleteProduct(${p.id})">🗑️</button>
+                <button class="btn btn-primary btn-sm" onclick="viewKeysForProduct(${p.id})">🔑</button>
             </div>` : ''}
         </div>
-    `).join('');
-}
-
-function showDetail(id) {
-    const p = products.find(pr => pr.id === id);
-    if (!p) return;
-    alert(`📦 ${p.name}\n📂 ${p.category}\n💰 ${p.price.toLocaleString()}đ\n📝 ${p.desc}`);
+    `}).join('');
 }
 
 function filterProducts(category, btn) {
-    document.querySelectorAll('.filter-bar button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.category-bar button').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
     renderProducts(category);
 }
@@ -692,8 +746,8 @@ function filterProducts(category, btn) {
 // ==================== AUTH ====================
 function openLogin() {
     authMode = 'login';
-    document.getElementById('authTitle').textContent = '🔐 Đăng nhập';
-    document.getElementById('authSub').textContent = 'Đăng nhập để quản lý tài khoản';
+    document.getElementById('authTitle').textContent = 'Đăng nhập';
+    document.getElementById('authSub').textContent = 'Đăng nhập để mua sắm';
     document.getElementById('authBtn').textContent = 'Đăng nhập';
     document.getElementById('authSwitch').innerHTML = 'Chưa có tài khoản? <a onclick="switchAuth()">Đăng ký ngay</a>';
     document.getElementById('authUsername').value = '';
@@ -704,7 +758,7 @@ function openLogin() {
 
 function openRegister() {
     authMode = 'register';
-    document.getElementById('authTitle').textContent = '📝 Đăng ký';
+    document.getElementById('authTitle').textContent = 'Đăng ký';
     document.getElementById('authSub').textContent = 'Tạo tài khoản mới';
     document.getElementById('authBtn').textContent = 'Đăng ký';
     document.getElementById('authSwitch').innerHTML = 'Đã có tài khoản? <a onclick="switchAuth()">Đăng nhập</a>';
@@ -715,11 +769,7 @@ function openRegister() {
 }
 
 function switchAuth() {
-    if (authMode === 'login') {
-        openRegister();
-    } else {
-        openLogin();
-    }
+    authMode === 'login' ? openRegister() : openLogin();
 }
 
 function handleAuth() {
@@ -728,7 +778,7 @@ function handleAuth() {
     const msg = document.getElementById('authMessage');
 
     if (!username || !password) {
-        msg.textContent = '⚠️ Vui lòng nhập đầy đủ thông tin!';
+        msg.textContent = '⚠️ Vui lòng nhập đầy đủ!';
         msg.className = 'error';
         return;
     }
@@ -739,17 +789,16 @@ function handleAuth() {
             msg.className = 'error';
             return;
         }
-        users.push({ username, password, role: 'user' });
+        users.push({ username, password, role: 'user', balance: 0 });
         msg.textContent = '✅ Đăng ký thành công! Vui lòng đăng nhập.';
         msg.className = 'success';
-        setTimeout(() => openLogin(), 1500);
+        setTimeout(() => openLogin(), 1200);
         return;
     }
 
-    // Login
     const user = users.find(u => u.username === username && u.password === password);
     if (!user) {
-        msg.textContent = '❌ Tên đăng nhập hoặc mật khẩu không đúng!';
+        msg.textContent = '❌ Sai tên đăng nhập hoặc mật khẩu!';
         msg.className = 'error';
         return;
     }
@@ -757,53 +806,159 @@ function handleAuth() {
     currentUser = user;
     isAdmin = user.role === 'admin';
     document.getElementById('authModal').classList.remove('active');
-    document.getElementById('userDisplay').textContent = `👤 ${username}`;
-    document.getElementById('loginBtn').style.display = 'none';
-    document.getElementById('registerBtn').style.display = 'none';
-    document.getElementById('logoutBtn').style.display = 'inline-block';
-
+    updateUI();
+    renderProducts();
+    renderMyKeys();
+    
     if (isAdmin) {
         document.getElementById('adminPanel').classList.add('active');
+        populateProductSelects();
         renderOrders();
         renderDeposits();
         updateTransactionList();
-        alert('👋 Chào admin! Bạn có thể duyệt đơn hàng và nạp tiền.');
+        alert('👋 Chào admin!');
     } else {
         document.getElementById('adminPanel').classList.remove('active');
-        alert(`👋 Chào ${username}! Chúc bạn mua sắm vui vẻ.`);
+        alert(`👋 Chào ${username}!`);
     }
-    renderProducts();
 }
 
 function logout() {
     currentUser = null;
     isAdmin = false;
-    document.getElementById('userDisplay').textContent = '👤 Khách';
-    document.getElementById('loginBtn').style.display = 'inline-block';
-    document.getElementById('registerBtn').style.display = 'inline-block';
-    document.getElementById('logoutBtn').style.display = 'none';
     document.getElementById('adminPanel').classList.remove('active');
+    document.getElementById('myKeysSection').style.display = 'none';
+    updateUI();
     renderProducts();
 }
 
-// ==================== ADMIN FUNCTIONS ====================
+function updateUI() {
+    const display = document.getElementById('userDisplay');
+    const balance = document.getElementById('balanceDisplay');
+    const loginBtn = document.getElementById('loginBtn');
+    const registerBtn = document.getElementById('registerBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const depositBtn = document.getElementById('depositBtn');
+
+    if (currentUser) {
+        display.textContent = `👤 ${currentUser.username}`;
+        balance.textContent = `💰 ${currentUser.balance.toLocaleString()}đ`;
+        balance.style.display = 'inline-block';
+        loginBtn.style.display = 'none';
+        registerBtn.style.display = 'none';
+        logoutBtn.style.display = 'inline-block';
+        depositBtn.style.display = 'inline-block';
+        if (!isAdmin) document.getElementById('myKeysSection').style.display = 'block';
+    } else {
+        display.textContent = '👤 Khách';
+        balance.style.display = 'none';
+        loginBtn.style.display = 'inline-block';
+        registerBtn.style.display = 'inline-block';
+        logoutBtn.style.display = 'none';
+        depositBtn.style.display = 'none';
+        document.getElementById('myKeysSection').style.display = 'none';
+    }
+}
+
+// ==================== BUY PRODUCT ====================
+function buyProduct(productId) {
+    if (!currentUser) { alert('⚠️ Vui lòng đăng nhập!'); openLogin(); return; }
+    if (isAdmin) { alert('⚠️ Admin không thể mua!'); return; }
+
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    const availableKey = keyStock.find(k => k.productId === productId && k.status === 'available');
+    if (!availableKey) { alert('❌ Hết key!'); return; }
+
+    if (currentUser.balance < product.price) {
+        alert(`❌ Số dư không đủ!\n💰 Cần: ${product.price.toLocaleString()}đ\n💰 Có: ${currentUser.balance.toLocaleString()}đ`);
+        return;
+    }
+
+    if (!confirm(`Mua ${product.name} - ${product.price.toLocaleString()}đ?`)) return;
+
+    // Trừ tiền
+    currentUser.balance -= product.price;
+    
+    // Gán key
+    availableKey.status = 'sold';
+    availableKey.buyer = currentUser.username;
+
+    // Tạo đơn hàng
+    const order = {
+        id: nextOrderId++,
+        productId: productId,
+        productName: product.name,
+        customer: currentUser.username,
+        amount: product.price,
+        key: availableKey.key,
+        status: 'completed',
+        date: new Date().toLocaleString()
+    };
+    orders.push(order);
+
+    transactions.unshift({
+        code: `mua-${Date.now().toString(36)}`,
+        amount: product.price,
+        status: 'completed',
+        type: 'mua',
+        detail: product.name,
+        date: new Date().toLocaleString()
+    });
+
+    renderProducts();
+    renderMyKeys();
+    updateTransactionList();
+    updateUI();
+    
+    alert(`✅ Mua thành công!\n🔑 Key: ${availableKey.key}\n💳 Đã trừ ${product.price.toLocaleString()}đ`);
+}
+
+// ==================== MY KEYS ====================
+function renderMyKeys() {
+    if (!currentUser || isAdmin) return;
+    const list = document.getElementById('myKeysList');
+    const myKeys = keyStock.filter(k => k.buyer === currentUser.username && k.status === 'sold');
+    
+    if (myKeys.length === 0) {
+        list.innerHTML = '<div style="color:#6b7280;padding:10px;">Chưa có key nào</div>';
+        return;
+    }
+
+    list.innerHTML = myKeys.map(k => {
+        const product = products.find(p => p.id === k.productId);
+        return `
+        <div class="key-item">
+            <div>
+                <div class="key-code">🔑 ${k.key}</div>
+                <div class="key-info">${product ? product.name : ''}</div>
+            </div>
+            <div class="key-info">✅ Đã mua</div>
+        </div>
+    `}).join('');
+}
+
+// ==================== ADMIN: PRODUCTS ====================
 function addProduct() {
-    if (!isAdmin) return alert('⚠️ Vui lòng đăng nhập admin!');
+    if (!isAdmin) return;
     const name = document.getElementById('prodName').value.trim();
     const category = document.getElementById('prodCategory').value.trim();
     const price = parseInt(document.getElementById('prodPrice').value);
     const desc = document.getElementById('prodDesc').value.trim();
+    
     if (!name || !category || isNaN(price) || !desc) {
-        document.getElementById('addResult').textContent = '⚠️ Vui lòng điền đầy đủ thông tin!';
+        document.getElementById('addResult').textContent = '⚠️ Điền đầy đủ!';
         return;
     }
     products.push({ id: nextId++, name, category, price, desc });
     renderProducts();
+    populateProductSelects();
     document.getElementById('prodName').value = '';
     document.getElementById('prodCategory').value = '';
     document.getElementById('prodPrice').value = '';
     document.getElementById('prodDesc').value = '';
-    document.getElementById('addResult').textContent = '✅ Đã thêm sản phẩm!';
+    document.getElementById('addResult').textContent = '✅ Thêm thành công!';
     document.getElementById('addResult').style.color = '#22c55e';
 }
 
@@ -818,99 +973,190 @@ function editProduct(id) {
     const newDesc = prompt('Mô tả:', p.desc);
     if (newDesc) p.desc = newDesc;
     renderProducts();
+    populateProductSelects();
 }
 
 function deleteProduct(id) {
     if (!isAdmin) return;
     if (confirm('Xóa sản phẩm này?')) {
         products = products.filter(p => p.id !== id);
+        keyStock = keyStock.filter(k => k.productId !== id);
         renderProducts();
+        populateProductSelects();
     }
 }
 
-// ==================== ORDERS ====================
-function renderOrders() {
-    const list = document.getElementById('orderList');
-    if (orders.length === 0) {
-        list.innerHTML = '<div style="color:#6b7280;text-align:center;padding:10px;">Không có đơn hàng</div>';
+// ==================== ADMIN: KEYS ====================
+function populateProductSelects() {
+    ['keyProductSelect', 'priceProductSelect'].forEach(id => {
+        const select = document.getElementById(id);
+        if (select) {
+            select.innerHTML = products.map(p => 
+                `<option value="${p.id}">${p.name}</option>`
+            ).join('');
+        }
+    });
+}
+
+function addKeys() {
+    if (!isAdmin) return;
+    const productId = parseInt(document.getElementById('keyProductSelect').value);
+    const keysText = document.getElementById('keyListInput').value.trim();
+    
+    if (!keysText) {
+        document.getElementById('keyResult').textContent = '⚠️ Nhập key!';
         return;
     }
-    list.innerHTML = orders.filter(o => o.status === 'pending').map(o => `
+    
+    const keys = keysText.split('\n').map(k => k.trim()).filter(k => k.length > 0);
+    let added = 0;
+    keys.forEach(key => {
+        if (!keyStock.find(k => k.key === key)) {
+            keyStock.push({
+                id: nextKeyId++,
+                productId: productId,
+                key: key,
+                status: 'available',
+                buyer: null
+            });
+            added++;
+        }
+    });
+    
+    document.getElementById('keyResult').textContent = `✅ Đã thêm ${added} key!`;
+    document.getElementById('keyResult').style.color = '#22c55e';
+    document.getElementById('keyListInput').value = '';
+    renderProducts();
+}
+
+function viewKeyStock() {
+    if (!isAdmin) return;
+    const view = document.getElementById('keyStockView');
+    const available = keyStock.filter(k => k.status === 'available').length;
+    const sold = keyStock.filter(k => k.status === 'sold').length;
+    
+    view.innerHTML = `
+        <div>📦 Tổng: ${keyStock.length} | ✅ Còn: ${available} | 🔴 Đã bán: ${sold}</div>
+        ${keyStock.slice(0, 10).map(k => {
+            const p = products.find(pr => pr.id === k.productId);
+            return `<div>${k.key} - ${p ? p.name : ''} - ${k.status}</div>`;
+        }).join('')}
+        ${keyStock.length > 10 ? `<div>... và ${keyStock.length - 10} key khác</div>` : ''}
+    `;
+}
+
+function viewKeysForProduct(productId) {
+    if (!isAdmin) return;
+    const keys = keyStock.filter(k => k.productId === productId);
+    const p = products.find(pr => pr.id === productId);
+    alert(`🔑 Kho key cho ${p ? p.name : ''}:\n\n` + 
+        keys.map(k => `${k.key} - ${k.status}`).join('\n') +
+        `\n\nTổng: ${keys.length} | Còn: ${keys.filter(k => k.status === 'available').length}`);
+}
+
+// ==================== ADMIN: ORDERS ====================
+function renderOrders() {
+    const list = document.getElementById('orderList');
+    const pending = orders.filter(o => o.status === 'pending');
+    if (pending.length === 0) {
+        list.innerHTML = '<div style="color:#6b7280;text-align:center;padding:8px;">Không có đơn hàng</div>';
+        return;
+    }
+    list.innerHTML = pending.map(o => `
         <div class="transaction-item">
-            <span>📦 ${o.product}<br><small>${o.customer} - ${o.amount.toLocaleString()}đ</small></span>
+            <span>${o.productName}<br><small>${o.customer} - ${o.amount.toLocaleString()}đ</small></span>
             <div>
-                <span class="status pending">Chờ duyệt</span>
+                <span class="status pending">Chờ</span>
                 <div class="admin-actions-small">
-                    <button class="btn btn-success" onclick="approveOrder(${o.id})">✅ Duyệt</button>
-                    <button class="btn btn-danger" onclick="rejectOrder(${o.id})">❌ Từ chối</button>
+                    <button class="btn btn-success btn-sm" onclick="processOrder(${o.id})">✅</button>
+                    <button class="btn btn-danger btn-sm" onclick="rejectOrder(${o.id})">❌</button>
                 </div>
             </div>
         </div>
     `).join('');
 }
 
-function approveOrder(id) {
+function processOrder(id) {
     if (!isAdmin) return;
     const order = orders.find(o => o.id === id);
     if (!order) return;
-    order.status = 'completed';
+    
+    const autoDelivery = document.getElementById('autoDelivery').checked;
+    
+    if (autoDelivery) {
+        // Tự động giao key
+        const availableKey = keyStock.find(k => k.productId === order.productId && k.status === 'available');
+        if (availableKey) {
+            availableKey.status = 'sold';
+            availableKey.buyer = order.customer;
+            order.key = availableKey.key;
+            order.status = 'completed';
+            alert(`✅ Đã giao key tự động: ${availableKey.key}`);
+        } else {
+            alert('❌ Hết key! Vui lòng nhập key mới.');
+            return;
+        }
+    } else {
+        // Thủ công: admin nhập key
+        const manualKey = prompt('📝 Nhập key để giao cho khách:');
+        if (!manualKey) return;
+        order.key = manualKey;
+        order.status = 'completed';
+        // Thêm key vào kho nếu chưa có
+        if (!keyStock.find(k => k.key === manualKey)) {
+            keyStock.push({
+                id: nextKeyId++,
+                productId: order.productId,
+                key: manualKey,
+                status: 'sold',
+                buyer: order.customer
+            });
+        }
+        alert(`✅ Đã giao key thủ công: ${manualKey}`);
+    }
+    
     transactions.unshift({
-        code: `mua-${Date.now().toString(36)}`,
+        code: `order-${Date.now().toString(36)}`,
         amount: order.amount,
         status: 'completed',
         type: 'mua',
+        detail: order.productName,
         date: new Date().toLocaleString()
     });
+    
     renderOrders();
+    renderProducts();
     updateTransactionList();
-    alert('✅ Đã duyệt đơn hàng!');
 }
 
 function rejectOrder(id) {
     if (!isAdmin) return;
+    const order = orders.find(o => o.id === id);
+    if (!order) return;
+    const user = users.find(u => u.username === order.customer);
+    if (user) user.balance += order.amount;
     orders = orders.filter(o => o.id !== id);
     renderOrders();
-    alert('❌ Đã từ chối đơn hàng!');
+    updateUI();
+    alert('❌ Đã từ chối và hoàn tiền!');
 }
 
-function buyNow(id) {
-    if (!currentUser) {
-        alert('⚠️ Vui lòng đăng nhập để mua hàng!');
-        openLogin();
-        return;
-    }
-    const p = products.find(pr => pr.id === id);
-    if (!p) return;
-    if (confirm(`Mua ${p.name} - ${p.price.toLocaleString()}đ?`)) {
-        orders.push({
-            id: nextOrderId++,
-            product: p.name,
-            customer: currentUser.username,
-            amount: p.price,
-            status: 'pending',
-            date: new Date().toLocaleString()
-        });
-        if (isAdmin) renderOrders();
-        alert('✅ Đã đặt hàng! Chờ admin duyệt nhé.');
-    }
-}
-
-// ==================== DEPOSITS ====================
+// ==================== ADMIN: DEPOSITS ====================
 function renderDeposits() {
     const list = document.getElementById('depositList');
     const waiting = deposits.filter(d => d.status === 'waiting');
     if (waiting.length === 0) {
-        list.innerHTML = '<div style="color:#6b7280;text-align:center;padding:10px;">Không có yêu cầu nạp</div>';
+        list.innerHTML = '<div style="color:#6b7280;text-align:center;padding:8px;">Không có yêu cầu</div>';
         return;
     }
     list.innerHTML = waiting.map(d => `
         <div class="transaction-item">
-            <span>💰 ${d.code}<br><small>${d.amount.toLocaleString()}đ</small></span>
+            <span>💰 ${d.code}<br><small>${d.username} - ${d.amount.toLocaleString()}đ</small></span>
             <div>
-                <span class="status waiting">Chờ duyệt</span>
+                <span class="status waiting">Chờ</span>
                 <div class="admin-actions-small">
-                    <button class="btn btn-success" onclick="approveDeposit(${d.id})">✅ Duyệt</button>
-                    <button class="btn btn-danger" onclick="rejectDeposit(${d.id})">❌ Từ chối</button>
+                    <button class="btn btn-success btn-sm" onclick="approveDeposit(${d.id})">✅</button>
+                    <button class="btn btn-danger btn-sm" onclick="rejectDeposit(${d.id})">❌</button>
                 </div>
             </div>
         </div>
@@ -922,36 +1168,45 @@ function approveDeposit(id) {
     const d = deposits.find(dep => dep.id === id);
     if (!d) return;
     d.status = 'completed';
-    const trans = transactions.find(t => t.code === d.code);
-    if (trans) trans.status = 'completed';
+    const user = users.find(u => u.username === d.username);
+    if (user) user.balance += d.amount;
+    transactions.unshift({
+        code: d.code,
+        amount: d.amount,
+        status: 'completed',
+        type: 'nạp',
+        detail: `${d.username} nạp ${d.amount.toLocaleString()}đ`,
+        date: new Date().toLocaleString()
+    });
     renderDeposits();
     updateTransactionList();
-    alert(`✅ Đã duyệt nạp tiền cho mã ${d.code}!`);
+    updateUI();
+    alert(`✅ Duyệt nạp ${d.amount.toLocaleString()}đ cho ${d.username}!`);
 }
 
 function rejectDeposit(id) {
     if (!isAdmin) return;
     deposits = deposits.filter(d => d.id !== id);
     renderDeposits();
-    alert('❌ Đã từ chối yêu cầu nạp!');
+    alert('❌ Từ chối nạp!');
 }
 
+// ==================== USER: DEPOSIT ====================
 function userDeposit() {
-    if (!currentUser) {
-        alert('⚠️ Vui lòng đăng nhập để nạp tiền!');
-        openLogin();
-        return;
-    }
+    if (!currentUser) { alert('⚠️ Vui lòng đăng nhập!'); openLogin(); return; }
+    if (isAdmin) { alert('⚠️ Admin dùng chức năng duyệt!'); return; }
+    
     const amount = prompt('💰 Nhập số tiền cần nạp (VNĐ):');
     if (!amount || isNaN(parseInt(amount)) || parseInt(amount) <= 0) {
-        alert('⚠️ Vui lòng nhập số tiền hợp lệ!');
+        alert('⚠️ Nhập số tiền hợp lệ!');
         return;
     }
-    const code = `nap-hi-${Math.random().toString(36).substr(2,5)}`;
+    const code = `nap-${Date.now().toString(36)}`;
     deposits.push({
         id: nextDepositId++,
         code: code,
         amount: parseInt(amount),
+        username: currentUser.username,
         status: 'waiting',
         date: new Date().toLocaleString()
     });
@@ -960,11 +1215,30 @@ function userDeposit() {
         amount: parseInt(amount),
         status: 'pending',
         type: 'nạp',
+        detail: `Chờ duyệt ${parseInt(amount).toLocaleString()}đ`,
         date: new Date().toLocaleString()
     });
     if (isAdmin) renderDeposits();
     updateTransactionList();
-    alert(`✅ Đã tạo mã nạp: ${code}\n💳 Số tiền: ${parseInt(amount).toLocaleString()}đ\n⏳ Đang chờ admin duyệt!`);
+    alert(`✅ Tạo mã: ${code}\n💰 ${parseInt(amount).toLocaleString()}đ\n⏳ Chờ admin duyệt!`);
+}
+
+// ==================== ADMIN: PRICE ====================
+function updatePrice() {
+    if (!isAdmin) return;
+    const productId = parseInt(document.getElementById('priceProductSelect').value);
+    const newPrice = parseInt(document.getElementById('newPrice').value);
+    if (isNaN(newPrice) || newPrice <= 0) {
+        document.getElementById('priceResult').textContent = '⚠️ Nhập giá hợp lệ!';
+        return;
+    }
+    const product = products.find(p => p.id === productId);
+    if (product) {
+        product.price = newPrice;
+        document.getElementById('priceResult').textContent = `✅ ${product.name}: ${newPrice.toLocaleString()}đ`;
+        document.getElementById('priceResult').style.color = '#22c55e';
+        renderProducts();
+    }
 }
 
 // ==================== TRANSACTIONS ====================
@@ -980,67 +1254,29 @@ function updateTransactionList() {
                 <span class="code">#${t.code}</span>
                 ${t.type === 'nạp' ? '💰 Nạp' : '🛒 Mua'}
                 ${t.amount ? t.amount.toLocaleString()+'đ' : ''}
+                ${t.detail ? ` - ${t.detail}` : ''}
                 <br><small style="color:#6b7280;">${t.date || ''}</small>
             </span>
             <span class="status ${t.status}">
                 ${t.status === 'completed' ? '✅ Thành công' :
-                  t.status === 'pending' ? '⏳ Chờ xử lý' :
-                  t.status === 'waiting' ? '⏳ Chờ duyệt' : t.status}
+                  t.status === 'pending' ? '⏳ Chờ' : t.status}
             </span>
         </div>
     `).join('');
 }
 
-// ==================== VOUCHER ====================
-function createVoucher() {
-    if (!isAdmin) return alert('⚠️ Vui lòng đăng nhập admin!');
-    const code = document.getElementById('voucherCode').value.trim();
-    const discount = parseInt(document.getElementById('voucherDiscount').value);
-    if (!code || isNaN(discount) || discount < 0 || discount > 100) {
-        document.getElementById('voucherResult').textContent = '⚠️ Nhập mã và % giảm (0-100)';
-        document.getElementById('voucherResult').style.color = '#ef4444';
-        return;
-    }
-    vouchers.push({ code, discount });
-    document.getElementById('voucherResult').innerHTML = `✅ Voucher <strong>${code}</strong> - Giảm ${discount}%`;
-    document.getElementById('voucherResult').style.color = '#22c55e';
-    document.getElementById('voucherCode').value = '';
-    document.getElementById('voucherDiscount').value = '';
-}
+// ==================== INIT ====================
+renderProducts();
+populateProductSelects();
+updateUI();
+updateTransactionList();
+renderOrders();
+renderDeposits();
 
-// ==================== CLOSE MODAL ====================
+// Đóng modal
 document.getElementById('authModal').addEventListener('click', function(e) {
     if (e.target === this) this.classList.remove('active');
 });
-
-// ==================== INIT ====================
-renderProducts();
-updateTransactionList();
-
-// Thêm nút nạp tiền cho user
-document.querySelector('.header-right').insertAdjacentHTML('beforeend', `
-    <button class="btn btn-warning" onclick="userDeposit()" id="depositBtn" style="display:none;">💰 Nạp tiền</button>
-`);
-
-// Cập nhật hiển thị nút nạp khi đăng nhập
-const origHandleAuth = handleAuth;
-handleAuth = function() {
-    origHandleAuth.call(this);
-    const depositBtn = document.getElementById('depositBtn');
-    if (currentUser && !isAdmin) {
-        depositBtn.style.display = 'inline-block';
-    } else {
-        depositBtn.style.display = 'none';
-    }
-};
-
-// Ghi đè logout để ẩn nút nạp
-const origLogout = logout;
-logout = function() {
-    origLogout.call(this);
-    document.getElementById('depositBtn').style.display = 'none';
-};
-
 </script>
 </body>
-</html>
+    </html>
